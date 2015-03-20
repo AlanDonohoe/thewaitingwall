@@ -18,6 +18,5 @@
 // alert('JS Works!!');
 
 $( document ).ready(function(){
-  // $(".button-collapse").sideNav();
-
+  $(".button-collapse").sideNav();
 });
