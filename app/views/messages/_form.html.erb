@@ -9,15 +9,13 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-
+  <div class="field row">
     <%= f.text_area :message_text %>
   </div>
-  <div class="actions">
-    <%= button_tag(type: 'submit', class: "waves-effect waves-light btn-large") do %>
-      <i class="mdi-content-mail left"></i>Post a message to the wall
+  <div class="actions row">
+    <%= button_tag(type: 'submit', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m7 offset-m5 l6 offset-l6") do %>
+      <i class="mdi-content-mail left"></i>Post my message to the wall
     <% end %>
     
   </div>
 <% end %>
-
