@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper light-blue darken-4">
+    <%= link_to "The Waiting Wall", messages_path, {class: "brand-logo center"} %>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Approve messages', messages_path %></li>
+        <li><%= link_to 'Edit account', edit_user_registration_path, {class: "waves-effect"} %></li>
+        
+        <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+      <% else %>
+        <li><%= link_to 'Sign in', new_user_session_path, {class: "waves-effect"} %></li>
+      <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Approve messages', messages_path %></li>
+        <li><%= link_to 'Edit account', edit_user_registration_path, {class: "waves-effect"} %></li>
+        
+        <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+      <% else %>
+        <li><%= link_to 'Sign in', new_user_session_path, {class: "waves-effect"} %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
