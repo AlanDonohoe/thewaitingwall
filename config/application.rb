@@ -34,5 +34,13 @@ module Thewaitingwall
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.to_prepare do
+      Devise::SessionsController.layout "devise_layout"
+      Devise::RegistrationsController.layout "devise_layout" 
+      Devise::ConfirmationsController.layout "devise_layout"
+      Devise::UnlocksController.layout "devise_layout"            
+      Devise::PasswordsController.layout "devise_layout"        
+    end
   end
 end
