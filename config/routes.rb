@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :messages
+  root to: 'messages#new'
 
-  root to: 'visitors#index'
-  devise_for :users
+  resources :messages
+  devise_for :users, :controllers => { :registrations => "registrations" }
   resources :users
 end
