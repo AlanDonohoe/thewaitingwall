@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all
+    render layout: 'the_wall_layout'
   end
 
   # GET /messages/1
@@ -19,6 +20,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    render layout: 'devise_layout' 
   end
 
   # POST /messages
