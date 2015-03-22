@@ -8,4 +8,8 @@ class UsersController < ApplicationController
     end
     render layout: "layouts/devise_layout"
   end
+
+  def index
+    @users = User.all
+  end
 end
