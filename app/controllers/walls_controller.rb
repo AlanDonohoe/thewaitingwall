@@ -5,6 +5,7 @@ class WallsController < ApplicationController
   # GET /walls/1
   # GET /walls/1.json
   def show
+    render layout: 'wall_layout'
   end
 
   # GET /walls/new
