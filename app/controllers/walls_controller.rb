@@ -1,0 +1,40 @@
+class WallsController < ApplicationController
+  before_action :set_wall, only: [:show, :edit, :update, :destroy]
+
+  # GET /walls/1
+  # GET /walls/1.json
+  def show
+  end
+
+  # GET /walls/new
+  def new
+    @wall = Wall.new
+  end
+
+  # POST /walls
+  # POST /walls.json
+  def create
+    @wall = Wall.new(wall_params)
+
+    respond_to do |format|
+      if @wall.save
+        format.html { redirect_to @wall, notice: 'Wall was successfully created.' }
+        format.json { render :show, status: :created, location: @wall }
+      else
+        format.html { render :new }
+        format.json { render json: @wall.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_wall
+      @wall = Wall.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def wall_params
+      params[:wall]
+    end
+end

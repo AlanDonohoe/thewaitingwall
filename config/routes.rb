@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :the_walls, only: [:show]
+
   root to: 'messages#new'
 
   resources :messages
