@@ -19,7 +19,6 @@ feature 'User posts a message to the wall' do
     expect(page).to_not have_content(@approved_message.message_text)
   end
 
-  scenario 'a non-admin user tries to access the admin area' do
-    # pending('not implemented')
+  scenario 'they post a message thats too long for the wall' do
   end
 end

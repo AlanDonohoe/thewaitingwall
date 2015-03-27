@@ -1,12 +1,12 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :index]
+  load_and_authorize_resource
 
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.all
-    render layout: 'the_wall_layout'
   end
 
   # GET /messages/1

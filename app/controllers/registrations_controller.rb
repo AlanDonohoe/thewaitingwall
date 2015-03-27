@@ -1,4 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
+
+  def new
+    # redirect_to root_path
+    redirect_to new_user_session_path 
+  end
+
   protected
 
   def after_sign_up_path_for(resource)
