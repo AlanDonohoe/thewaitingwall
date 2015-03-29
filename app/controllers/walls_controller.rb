@@ -32,7 +32,7 @@ class WallsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wall
-      @wall = Wall.find(1) # was: params[:id] - but like Highlander, there can be only one wall.
+      @wall = Wall.first # was: params[:id] - but like Highlander, there can be only one wall.
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

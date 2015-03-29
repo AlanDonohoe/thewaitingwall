@@ -1,9 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
-  def new
-    # redirect_to root_path
-    redirect_to new_user_session_path 
-  end
+  # def new
+  #   # depending on if you want to allow users to sign up. 
+  #   # redirect_to root_path
+  #   # redirect_to new_user_session_path
+  # end
 
   protected
 

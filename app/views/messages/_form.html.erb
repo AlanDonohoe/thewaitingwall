@@ -11,14 +11,13 @@
   <% end %>
 
   <div class="row">
-    <form class="col s12">
+    <div class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <%= f.label :message_text, "Enter your" %>
-          <%= f.text_area :message_text, class: "materialize-textarea", placeholder: 'message for the wall...', required: true  %>
+          <%= f.text_area :message_text, class: "materialize-textarea", placeholder: 'Enter your message for the wall...', required: true  %>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 
   <% if can? :update, @message %>

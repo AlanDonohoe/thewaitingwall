@@ -16,7 +16,7 @@ feature 'User posts a message to the wall' do
     @wall = create(:wall)
     @approved_message = create(:message, approved: true, message_text: 'this is an approved message')
     visit wall_path(@wall)
-    expect(page).to_not have_content(@approved_message.message_text)
+    expect(page).to have_content(@approved_message.message_text)
   end
 
   scenario 'they post a message thats too long for the wall' do

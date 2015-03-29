@@ -1,12 +1,15 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  # before_action :set_message, only: [:show, :edit, :update, :destroy]
+  # before_action :set_message, only: [:show]
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :index]
   load_and_authorize_resource
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    # TODO list meesages by most recent and not approved.
+    # @messages = Message.all
+    # @messages = Message.accessible_by(current_ability)
   end
 
   # GET /messages/1
@@ -27,6 +30,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
+    # TODO delete approved params - so no one can hack in an approved message
     @message = Message.new(message_params)
 
     respond_to do |format|
@@ -43,6 +47,7 @@ class MessagesController < ApplicationController
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update
+    # TODO Add field to record which user updated/approved or deleted message
     respond_to do |format|
       if @message.update(message_params)
         format.html { redirect_to @message, notice: 'Message was successfully updated.' }
@@ -57,6 +62,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
+    # TODO Add paranoid gem to soft delete messages?
     @message.destroy
     respond_to do |format|
       format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
@@ -64,6 +70,7 @@ class MessagesController < ApplicationController
     end
   end
 
+ 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
@@ -71,6 +78,8 @@ class MessagesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Need one set of params for create, that does not have approved
+    # Need second set for update (which a user has to be signed in and admin to authorise) - which does have approved...
     def message_params
       params.require(:message).permit(:message_text, :approved, :times_shown)
     end
