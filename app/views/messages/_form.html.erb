@@ -1,14 +1,5 @@
 <%= form_for(@message) do |f| %>
-  <% if @message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-      <ul>
-      <% @message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'errors' %>
 
   <div class="row">
     <div class="col s12">
@@ -19,13 +10,6 @@
       </div>
     </div>
   </div>
-
-  <% if can? :update, @message %>
-    <div class="field">
-      <%= f.label :approved %>
-      <%= f.check_box :approved %>
-    </div>
-  <% end %>
   
   <div class="actions row">
     <%= button_tag(type: 'submit', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m7 offset-m5 l6 offset-l6") do %>
@@ -33,3 +17,4 @@
     <% end %>
   </div>
 <% end %>
+
