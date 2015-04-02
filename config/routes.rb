@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :walls, only: [:show]
   resources :messages
   get   "/thewall" => "walls#show"
-  # get "users/sign_up" => "users/sign_in"
 end
