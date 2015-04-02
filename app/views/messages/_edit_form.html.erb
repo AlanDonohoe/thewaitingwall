@@ -1,0 +1,25 @@
+<%= form_for(@message) do |f| %>
+  <%= render partial: 'errors' %>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.text_area :message_text, class: "materialize-textarea", placeholder: 'Enter your message for the wall...', required: true  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= f.check_box :approved %>
+    <%= f.label :approved %>
+  </div>
+  
+  <div class="actions row">
+    <%= button_tag(type: 'submit', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m7 offset-m5 l6 offset-l6") do %>
+      <i class="mdi-content-mail left"></i>Update message
+    <% end %>
+  </div>
+<% end %>
+
