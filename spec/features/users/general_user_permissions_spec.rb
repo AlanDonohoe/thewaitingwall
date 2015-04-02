@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'General user tries to access various parts of the app' do
-  before :all do
+  before :each do
     @wall = create(:wall)
     @approved_message = create(:message, approved: true)
   end
@@ -44,13 +44,12 @@ feature 'General user tries to access various parts of the app' do
     last_email = ActionMailer::Base.deliveries.last
     ctoken = last_email.body.match(/confirmation_token=\w*/)
     visit "/users/confirmation?#{ctoken}"
-    # save_and_open_page
     fill_in 'user_email', with: 'theguys@freethetrees.co.uk'
     fill_in 'user_password', with: 'password123'
     click_on 'Log in'
     # as user has not been classified as an admin yet:
+    expect(User.last.role).to eq 'general'
     expect(page).to_not have_content('Approve messages')
-    
     visit messages_path
     expect(page).to have_content('You are not authorized to access this page')
     expect(page).to_not have_content('My Message')
