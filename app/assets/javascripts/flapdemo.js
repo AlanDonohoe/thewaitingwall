@@ -76,10 +76,6 @@ var FlapDemo = function(display_selector, input_selector, click_selector) {
         var text = _this.cleanInput(_this.$typesomething.val());
         // _this.$typesomething.val('');
 
-        if (text.match(/what is the point/i) || text.match(/what's the point/i)) {
-            text = "WHAT'S THE POINT OF YOU?";
-        }
-
         var buffers = _this.parseInput(text);
 
         _this.stopDisplay();
