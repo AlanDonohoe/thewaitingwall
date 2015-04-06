@@ -74,9 +74,13 @@ class MessagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    # Need one set of params for create, that does not have approved
-    # Need second set for update (which a user has to be signed in and admin to authorise) - which does have approved...
+    # Need one set of params for create, that does not have approved and current user....
+    # Need second set for update (which a user has to be signed in and admin to authorise) - which does have approved and current user
     def message_params
-      params.require(:message).permit(:message_text, :approved, :times_shown).merge(user_id: current_user.id)
+      if current_user
+        params.require(:message).permit(:message_text, :approved, :times_shown).merge(user_id: current_user.id)
+      else
+        params.require(:message).permit(:message_text, :approved, :times_shown)
+      end
     end
 end
