@@ -7,9 +7,9 @@ $(function() {
     }, 2000);
   });
   $("#edit_message").click(function() {
-    $("#flapper-display-area").show();
+    // $("#flapper-display-area").show();
     $('html, body').animate({
-      scrollTop: $("#message_message_text").offset().top
-    }, 2000);
+      scrollTop: $(".nav-wrapper").offset().top
+    }, 1000);
   });
 });
