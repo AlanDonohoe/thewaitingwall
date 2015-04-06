@@ -41,6 +41,7 @@ FlapBuffer.prototype = {
 
 var FlapDemo = function(display_selector, input_selector, click_selector) {
     var _this = this;
+    var digits_per_line = $(window).width() < 960 ? 6 : 20;
 
     var onAnimStart = function(e) {
         var $display = $(e.target);
@@ -55,7 +56,7 @@ var FlapDemo = function(display_selector, input_selector, click_selector) {
     this.opts = {
         chars_preset: 'alphanum',
         align: 'left',
-        width: 20,
+        width: digits_per_line,
         on_anim_start: onAnimStart,
         on_anim_end: onAnimEnd
     };
