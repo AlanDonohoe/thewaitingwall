@@ -10,6 +10,7 @@ $(function() {
   });
   $("#edit_message").click(function() {
     // $("#message_review").show();
+    $("#message_message_text").focus();
     $('html, body').animate({
       scrollTop: $(".nav-wrapper").offset().top
     }, 500);
