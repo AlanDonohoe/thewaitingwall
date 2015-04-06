@@ -36,6 +36,21 @@
 /**
 * Framework Overrides
 **/
+
+
+
 nav .brand-logo.center {
 	top: 0;
+}
+
+
+
+/**
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ */
+
+
+#flapper-display-area {
+  display: none;
 }

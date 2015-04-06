@@ -12,26 +12,32 @@
   </div>
   
   <div class="actions row">
-    <%= button_tag(type: 'button', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m7 offset-m5 l6 offset-l6", id: 'message_review') do %>
-      <i class="mdi-content-mail left"></i>Preview
+    <%= button_tag(type: 'button', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m6 offset-m5 l4 offset-l6", id: 'message_review') do %>
+      <i class="mdi-content-mail left"></i>Preview message
     <% end %>
-    <%= button_tag(type: 'submit', class: "yellow darken-4 waves-effect waves-light btn-large col s10 offset-s1 m7 offset-m5 l6 offset-l6") do %>
-      <i class="mdi-content-mail left"></i>Post my message to the wall
-    <% end %>
+  </div>
+  <div id="flapper-display-area">
+    <div class="row">
+      <div class="displays">
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+        <input class="display S"/>
+      </div>
+    </div>
+    <div class="actions row">
+      <%= button_tag(type: 'button', class: "yellow darken-4 waves-effect waves-light btn-large col s11 offset-s1 m7 l4", id: 'edit_message') do %>
+        <i class="mdi-content-mail left"></i>Edit message
+      <% end %>
+      <%= button_tag(type: 'submit', class: "green darken-4 waves-effect waves-light btn-large col s11 offset-s1 m7 offset-m5 l6 offset-l2") do %>
+        <i class="mdi-content-mail left"></i>Post my message to the wall
+      <% end %>
+    </div>
   </div>
 <% end %>
-
-<div class="row">
-  <div class="displays">
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-    <input class="display S" />
-  </div>
-</div>
