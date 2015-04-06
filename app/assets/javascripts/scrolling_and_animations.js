@@ -1,4 +1,5 @@
 $(function() {
+  $("#message_message_text").focus();
   $("#flapper-display-area").hide();
   $("#message_review").click(function() {
     // $("#message_review").hide();
