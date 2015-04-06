@@ -1488,7 +1488,9 @@ $(document).ready(function(){
 
                 setTimeout(function() {
                     try {
-                        el.removeChild(ripple);
+                        // el.removeChild(ripple);
+                        ripple.parentNode.removeChild(ripple);
+
                     } catch(e) {
                         return false;
                     }
