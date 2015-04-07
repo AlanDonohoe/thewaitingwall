@@ -8,27 +8,6 @@ class WallsController < ApplicationController
     render layout: 'wall_layout'
   end
 
-  # GET /walls/new
-  def new
-    @wall = Wall.new
-  end
-
-  # POST /walls
-  # POST /walls.json
-  def create
-    @wall = Wall.new(wall_params)
-
-    respond_to do |format|
-      if @wall.save
-        format.html { redirect_to @wall, notice: 'Wall was successfully created.' }
-        format.json { render :show, status: :created, location: @wall }
-      else
-        format.html { render :new }
-        format.json { render json: @wall.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wall
