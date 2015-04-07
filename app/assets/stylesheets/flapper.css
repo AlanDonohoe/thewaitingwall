@@ -208,6 +208,8 @@
 .flapper.S .digit div {
     height: 40px;
     width: 30px;
+/*    height: 100%;
+    width: 4%;*/
     font-size: inherit;
     line-height: inherit;
 }

@@ -53,4 +53,6 @@ nav .brand-logo.center {
 
 #flapper-display-area {
   display: none;
+  width: 100%;
+  max-width: 960px;
 }

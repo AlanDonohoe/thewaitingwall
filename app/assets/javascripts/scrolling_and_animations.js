@@ -6,13 +6,14 @@ $(function() {
     $("#flapper-display-area").show();
     $('html, body').animate({
       scrollTop: $("#flapper-display-area").offset().top
-    }, 700);
+    }, 1000);
   });
   $("#edit_message").click(function() {
     // $("#message_review").show();
-    $("#message_message_text").focus();
+    // $("#message_message_text").focus();
     $('html, body').animate({
       scrollTop: $(".nav-wrapper").offset().top
-    }, 500);
+    }, 2000);
+
   });
 });
