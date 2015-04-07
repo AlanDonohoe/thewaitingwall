@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Message text:</strong>
-  <%= @message.message_text %>
-</p>
-
-<p>
-  <strong>Approved:</strong>
-  <%= @message.approved %>
-</p>
-
-<p>
-  <strong>Times shown:</strong>
-  <%= @message.times_shown %>
-</p>
 <% if can? :update, @message %>
+  <p>
+    <strong>Message text:</strong>
+    <%= @message.message_text %>
+  </p>
+
+  <p>
+    <strong>Approved:</strong>
+    <%= @message.approved %>
+  </p>
+
+  <p>
+    <strong>Times shown:</strong>
+    <%= @message.times_shown %>
+  </p>
+
   <%= link_to 'Edit', edit_message_path(@message) %> |
   <%= link_to 'Back', messages_path %>
+<% else %>
+  <p><%= link_to 'Show me the wall', wall_path(1) %></p>
 <% end %>
