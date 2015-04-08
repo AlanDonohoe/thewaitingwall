@@ -5,9 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    # TODO list meesages by most recent and not approved.
-    # @messages = Message.all
-    # @messages = Message.accessible_by(current_ability)
+    @messages = @messages.unapproved_messages
     render layout: 'devise_layout' 
   end
 

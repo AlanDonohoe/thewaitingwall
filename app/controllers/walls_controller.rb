@@ -1,6 +1,6 @@
 class WallsController < ApplicationController
   before_action :set_wall, only: [:show]
-  before_action :get_approved_messages, only: [:show]
+  before_action :get_current_batch_of_messages, only: [:show]
 
   # GET /walls/1
   # GET /walls/1.json
@@ -19,7 +19,7 @@ class WallsController < ApplicationController
       params[:wall]
     end
 
-    def get_approved_messages
-      @approved_messages = Message.least_shown_approved_messages
+    def get_current_batch_of_messages
+      @current_batch_of_messages = Message.approved_messages
     end
 end

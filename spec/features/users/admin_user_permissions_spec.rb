@@ -13,7 +13,7 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
   scenario 'visit new message page' do
     visit root_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
-    click_on 'Post my message to the wall'
+    click_on 'Post to the wall'
     expect(page).to have_content('Message was successfully created.')
   end
 
@@ -45,7 +45,7 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
     visit messages_path
     expect(page).to_not have_content('You need to sign in or sign up before continuing')
     expect(page).to have_content(@unapproved_message.message_text)
-    expect(page).to have_content(@approved_message.message_text)
+    expect(page).to_not have_content(@approved_message.message_text)
   end
 
   scenario 'visit the wall page' do
@@ -62,5 +62,11 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
     @unapproved_message.reload
     expect(@unapproved_message.approved).to eq true
     expect(@unapproved_message.user_id).to eq @admin_user.id
+    visit messages_path
+    expect(page).to_not have_content('Approved Message')
+  end
+
+  scenario 'they delete a message and then reinstate' do
+    # pending("bring in soft delete... paranoid gem")
   end
  end

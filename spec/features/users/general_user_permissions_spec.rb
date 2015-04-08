@@ -8,7 +8,7 @@ feature 'General user tries to access various parts of the app' do
   scenario 'user visits new message page' do
     visit root_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
-    click_on 'Post my message to the wall'
+    click_on 'Post to the wall'
     expect(page).to have_content('Message was successfully created.')
   end
 
@@ -19,7 +19,8 @@ feature 'General user tries to access various parts of the app' do
 
   scenario 'user visits show message page' do
     visit message_path(@approved_message)
-    expect(page).to have_content('My Message')
+    # expect(page).to have_content('My Message')
+    expect(page).to have_content('Show me the wall')
     expect(page).to_not have_content('You need to sign in or sign up before continuing')
   end
 
