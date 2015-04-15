@@ -1377,65 +1377,65 @@ $(document).ready(function(){
 
         show: function(e, element) {
 
-            // Disable right click
-            if (e.button === 2) {
-                return false;
-            }
+            // // Disable right click
+            // if (e.button === 2) {
+            //     return false;
+            // }
 
-            var el = element || this;
+            // var el = element || this;
 
-            // Create ripple
-            var ripple = document.createElement('div');
-            ripple.className = 'waves-ripple';
-            el.appendChild(ripple);
+            // // Create ripple
+            // var ripple = document.createElement('div');
+            // ripple.className = 'waves-ripple';
+            // el.appendChild(ripple);
 
-            // Get click coordinate and element witdh
-            var pos         = offset(el);
-            var relativeY   = (e.pageY - pos.top);
-            var relativeX   = (e.pageX - pos.left);
-            var scale       = 'scale('+((el.clientWidth / 100) * 10)+')';
+            // // Get click coordinate and element witdh
+            // var pos         = offset(el);
+            // var relativeY   = (e.pageY - pos.top);
+            // var relativeX   = (e.pageX - pos.left);
+            // var scale       = 'scale('+((el.clientWidth / 100) * 10)+')';
 
-            // Support for touch devices
-            if ('touches' in e) {
-              relativeY   = (e.touches[0].pageY - pos.top);
-              relativeX   = (e.touches[0].pageX - pos.left);
-            }
+            // // Support for touch devices
+            // if ('touches' in e) {
+            //   relativeY   = (e.touches[0].pageY - pos.top);
+            //   relativeX   = (e.touches[0].pageX - pos.left);
+            // }
 
-            // Attach data to element
-            ripple.setAttribute('data-hold', Date.now());
-            ripple.setAttribute('data-scale', scale);
-            ripple.setAttribute('data-x', relativeX);
-            ripple.setAttribute('data-y', relativeY);
+            // // Attach data to element
+            // ripple.setAttribute('data-hold', Date.now());
+            // ripple.setAttribute('data-scale', scale);
+            // ripple.setAttribute('data-x', relativeX);
+            // ripple.setAttribute('data-y', relativeY);
 
-            // Set ripple position
-            var rippleStyle = {
-                'top': relativeY+'px',
-                'left': relativeX+'px'
-            };
+            // // Set ripple position
+            // var rippleStyle = {
+            //     'top': relativeY+'px',
+            //     'left': relativeX+'px'
+            // };
 
-            ripple.className = ripple.className + ' waves-notransition';
-            ripple.setAttribute('style', convertStyle(rippleStyle));
-            ripple.className = ripple.className.replace('waves-notransition', '');
+            // ripple.className = ripple.className + ' waves-notransition';
+            // ripple.setAttribute('style', convertStyle(rippleStyle));
+            // ripple.className = ripple.className.replace('waves-notransition', '');
 
-            // Scale the ripple
-            rippleStyle['-webkit-transform'] = scale;
-            rippleStyle['-moz-transform'] = scale;
-            rippleStyle['-ms-transform'] = scale;
-            rippleStyle['-o-transform'] = scale;
-            rippleStyle.transform = scale;
-            rippleStyle.opacity   = '1';
+            // // Scale the ripple
+            // rippleStyle['-webkit-transform'] = scale;
+            // rippleStyle['-moz-transform'] = scale;
+            // rippleStyle['-ms-transform'] = scale;
+            // rippleStyle['-o-transform'] = scale;
+            // rippleStyle.transform = scale;
+            // rippleStyle.opacity   = '1';
 
-            rippleStyle['-webkit-transition-duration'] = Effect.duration + 'ms';
-            rippleStyle['-moz-transition-duration']    = Effect.duration + 'ms';
-            rippleStyle['-o-transition-duration']      = Effect.duration + 'ms';
-            rippleStyle['transition-duration']         = Effect.duration + 'ms';
+            // rippleStyle['-webkit-transition-duration'] = Effect.duration + 'ms';
+            // rippleStyle['-moz-transition-duration']    = Effect.duration + 'ms';
+            // rippleStyle['-o-transition-duration']      = Effect.duration + 'ms';
+            // rippleStyle['transition-duration']         = Effect.duration + 'ms';
 
-            rippleStyle['-webkit-transition-timing-function'] = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-            rippleStyle['-moz-transition-timing-function']    = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-            rippleStyle['-o-transition-timing-function']      = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-            rippleStyle['transition-timing-function']         = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
+            // rippleStyle['-webkit-transition-timing-function'] = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
+            // rippleStyle['-moz-transition-timing-function']    = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
+            // rippleStyle['-o-transition-timing-function']      = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
+            // rippleStyle['transition-timing-function']         = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
 
-            ripple.setAttribute('style', convertStyle(rippleStyle));
+            // ripple.setAttribute('style', convertStyle(rippleStyle));
         },
 
         hide: function(e) {
@@ -1488,7 +1488,7 @@ $(document).ready(function(){
 
                 setTimeout(function() {
                     try {
-                        // el.removeChild(ripple);
+                        el.removeChild(ripple);
                         ripple.parentNode.removeChild(ripple);
 
                     } catch(e) {
