@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :message do
-    message_text "My Message"
     approved false
     times_shown 0
+    message_text 'This is a message'
   end
 
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'General user tries to access various parts of the app' do
   before :each do
     @wall = create(:wall)
-    @approved_message = create(:message, approved: true)
+    @approved_message = create(:message, approved: true, message_text: 'this is an approved message')
   end
   scenario 'user visits new message page' do
     visit root_path
@@ -31,7 +31,7 @@ feature 'General user tries to access various parts of the app' do
 
   scenario 'user visits the wall page' do
     visit wall_path(@wall)
-    expect(page).to have_content('My Message')
+    expect(page).to have_content('this is an approved message')
     expect(page).to_not have_content('You need to sign in or sign up before continuing')
   end
 
