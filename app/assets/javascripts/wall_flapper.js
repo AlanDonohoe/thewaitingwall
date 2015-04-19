@@ -74,8 +74,8 @@ var FlapDemo = function(display_selector, input_selector, click_selector) {
 
     this.$typesomething = $(input_selector);
 
-    $(click_selector).click(function(e){
-        var text = _this.cleanInput(_this.$typesomething.val());
+    // $(click_selector).click(function(e){
+        var text = _this.cleanInput(_this.$typesomething.text());
         // _this.$typesomething.val('');
 
         var buffers = _this.parseInput(text);
@@ -83,8 +83,8 @@ var FlapDemo = function(display_selector, input_selector, click_selector) {
         _this.stopDisplay();
         _this.updateDisplay(buffers);
 
-        e.preventDefault();
-    });
+        // e.preventDefault();
+    // });
 };
 
 FlapDemo.prototype = {
@@ -146,9 +146,9 @@ FlapDemo.prototype = {
 
 };
 
-// $(document).ready(function(){
+$(document).ready(function(){
 
-//     new FlapDemo('input.display', '#message_message_text', '#message_review');
+    new FlapDemo('input.display', '#current_batch_of_messages', '#message_review');
 
-// });
+});
 
