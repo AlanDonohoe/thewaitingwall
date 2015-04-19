@@ -14,4 +14,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require navigation
+//= require google_analytics
+//= require materialize
+//= require scrolling_and_animations
+//= require jquery.flapper

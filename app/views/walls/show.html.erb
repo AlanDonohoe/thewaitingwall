@@ -1,68 +1,16 @@
-<% @current_batch.messages.each do |message| %>
-  <p><%= message.message_text %></p>
-<% end %>
-
 <div style="display:none" id="current_batch_of_messages"><%= @current_batch.appended_messages %></div>
-<script>
-//   $(document).ready(function() {
-//     var $header_display = $('#display');
-//     $header_display.flapper({
-//         width: 19,
-//         chars_preset: 'alphanum'
-//     });
 
-//     var $demo_slow = $('#animation_demo input.slow');
-//     // var $demo_fast = $('#animation_demo input.fast');
-
-//     var demo_timing = 500;
-//     var demo_chars = [' ','0','1','2','3','4','5','6','7','8','9'];
-
-//     $demo_slow.flapper({
-//         width: 1,
-//         chars: demo_chars,
-//         timing: demo_timing,
-//     });
-    
-//     // $demo_fast.flapper({
-//     //     width: 1,
-//     //     chars: demo_chars,
-//     //     timing: demo_timing,
-//     //     transform: false
-//     // });
-
-//     var $demos = $('#animation_demo input');
-
-//     setTimeout(function(){
-//         $header_display.val('FLAPPERSSSSS').change();
-//         $demos.val(0).change();
-//         var toggle = false;
-//         setInterval(function(){
-//             if (toggle) {
-//                 $header_display.val('FLAPPERSSSSS').change();
-//                 $demos.val(0).change();
-//             } else {
-//                 $header_display.val('').change();
-//                 $demos.val('').change();
-//             }
-//             toggle = !toggle;
-//         }, 5000);
-//     }, 1000);
-
-//     // $('#size_demo input').flapper({
-//     //     width: 1,
-//     //     chars: ['20']
-//     // });
-// });
-</script>
-
-<!-- <div class="row">
-  <div class="z-depth-2">
-    <input id="display" />
-  </div>
-</div> -->
 <div class="row">
-  <!-- <div class="displays z-depth-2"> -->
+  <div class="displays z-depth-2">
     <input class="display S"/>
-  <!-- </div> -->
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+    <input class="display S"/>
+  </div>
 </div>
-

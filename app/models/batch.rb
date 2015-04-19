@@ -22,7 +22,7 @@ class Batch < ActiveRecord::Base
   def appended_messages
     appended_messages_text = ""
     messages.each do |message|
-      appended_messages_text += message.message_text + "\n"
+      appended_messages_text += message.message_text + "\n....................\n"
     end
     appended_messages_text
   end
