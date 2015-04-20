@@ -24,7 +24,7 @@
         defaults: {
           width: 6,
           format: null,
-          align: 'right',
+          align: 'left',
           padding: ' ',
           chars: null,
           chars_preset: 'num',

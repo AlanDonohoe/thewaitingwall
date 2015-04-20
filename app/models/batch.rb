@@ -18,4 +18,12 @@ class Batch < ActiveRecord::Base
     messages.each {|message| total_no_of_letters +=  message.message_text.length }
     total_no_of_letters
   end
+
+  def appended_messages
+    appended_messages_text = ""
+    messages.each do |message|
+      appended_messages_text += message.message_text + "\n....................\n"
+    end
+    appended_messages_text
+  end
 end
