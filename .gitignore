@@ -80,3 +80,6 @@ pickle-email-*.html
 .env
 
 config/application.yml
+
+# Ignore application configuration
+/config/application.yml
