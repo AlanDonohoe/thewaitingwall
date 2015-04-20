@@ -4,6 +4,7 @@ class Batch < ActiveRecord::Base
   after_create :collect_new_messages
 
   def collect_new_messages
+    puts 'Batch::collect_new_messages'
     total_no_of_letters = 0
     Message.approved_messages.limit(10).each do |message|
       total_no_of_letters += message.message_text.length
