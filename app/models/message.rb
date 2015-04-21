@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  default_scope { order('times_shown DESC') }
+  default_scope { order('times_shown ASC') }
   scope :approved_messages, -> {where('approved = true')}
   scope :unapproved_messages, -> {where('approved = false')}
 

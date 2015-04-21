@@ -31,4 +31,8 @@ RSpec.describe Batch, type: :model do
       expect(last_message.times_shown).to be 0
     end
   end
+  it 'should select messages that have not been shown before' do
+      pending('need to write this spec...')
+      expect(last_message.times_shown).to be 0
+    end
 end
