@@ -300,7 +300,8 @@ h1 {
 .displays {
     padding: 10px;
     /*border: 10px solid #ccc;*/
-    background-color: #222;
+    /*background-color: #222;*/
+    background-color: black;
     border-radius: 2px;
     /*box-shadow: 0 0 12px 4px #000 inset;*/
 }
