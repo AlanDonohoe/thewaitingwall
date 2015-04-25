@@ -31,6 +31,6 @@ class Batch < ActiveRecord::Base
   private
 
   def update_the_wall
-    Pusher['the_waiting_wall'].trigger('wall_update', {})
+    Pusher['the_waiting_wall'].trigger('wall_update', {}) unless Rails.env.test?
   end
 end
