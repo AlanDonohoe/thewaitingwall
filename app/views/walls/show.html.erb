@@ -1,16 +1,1 @@
-<div style="display:none" id="current_batch_of_messages"><%= @current_batch.appended_messages %></div>
-
-<div class="row">
-  <div class="displays z-depth-2">
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-    <input class="display S"/>
-  </div>
-</div>
+<%= render partial: 'wall_wrapper', locals: { current_batch: @current_batch } %>

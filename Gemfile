@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'cancancan', '~> 1.10'
 gem "figaro"
 gem 'delayed_job_active_record'
+gem 'pusher'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -1,0 +1,2 @@
+$('#wall_wrapper').replaceWith("<%= escape_javascript render(:partial => 'wall_wrapper', locals: { current_batch: @current_batch }) %>");
+new FlapDemo('.display', '#current_batch_of_messages', '#message_review');

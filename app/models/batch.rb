@@ -11,6 +11,7 @@ class Batch < ActiveRecord::Base
       incremented_times_shown = message.times_shown + 1
       message.update_attributes(batch_id: self.id, times_shown: incremented_times_shown)
     end
+    update_the_wall
   end
 
   def letter_count
@@ -25,5 +26,11 @@ class Batch < ActiveRecord::Base
       appended_messages_text += message.message_text + "\n                    \n"
     end
     appended_messages_text
+  end
+
+  private
+
+  def update_the_wall
+    Pusher['the_waiting_wall'].trigger('wall_update', {})
   end
 end

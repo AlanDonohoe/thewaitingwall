@@ -5,7 +5,10 @@ class WallsController < ApplicationController
   # GET /walls/1
   # GET /walls/1.json
   def show
-    render layout: 'wall_layout'
+    respond_to do |format|
+      format.js
+      format.html { render layout: 'wall_layout' }
+    end
   end
 
   private
