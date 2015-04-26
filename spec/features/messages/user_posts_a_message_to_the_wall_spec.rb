@@ -27,5 +27,6 @@ feature 'User posts a message to the wall' do
 
   scenario 'they post a message thats too long for the wall' do
     # pending
+    #  do we need to set a max no of letters per message??
   end
 end
