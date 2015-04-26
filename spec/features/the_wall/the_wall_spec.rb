@@ -9,5 +9,7 @@ feature 'User views the wall' do
     # coloured background:
     visit wall_path(@wall, {background: 'black'})
     find(:css, 'body')['style'].should == 'background-color:black'
+    # image background
+    # TODO 
   end
 end
