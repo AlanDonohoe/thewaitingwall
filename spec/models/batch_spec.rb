@@ -23,8 +23,13 @@ RSpec.describe Batch, type: :model do
       expect(first_message.times_shown).to be 1
     end
   end
-  it 'should select messages that have not been shown before' do
-      pending('need to write this spec...')
-      expect(last_message.times_shown).to be 0
+  it 'should select messages in order of number of times they\'ve been shown before' do
+      @never_shown_message = create(:message, approved: true, message_text: 'This is a brand new message')
+      @shown_once_message = create(:message, approved: true, times_shown: 1, message_text: 'This is message has been shown once')
+      @shown_twice_message = create(:message, approved: true, times_shown: 2, message_text: 'This is message has been shown twice')
+      @new_batch = create(:batch)
+      expect(@new_batch.messages[0]).to eq @never_shown_message
+      expect(@new_batch.messages[1]).to eq @shown_once_message
+      expect(@new_batch.messages[2]).to eq @shown_twice_message
     end
 end
