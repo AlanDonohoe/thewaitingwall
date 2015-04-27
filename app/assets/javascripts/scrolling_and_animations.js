@@ -3,7 +3,7 @@ $(function() {
   $("#flapper-display-area").hide();
   $("#message_review").click(function() {
     // $("#message_review").hide();
-    $("#flapper-display-area").show();
+    $("#flapper-display-area").css("display", "inline");
     $('html, body').animate({
       scrollTop: $("#flapper-display-area").offset().top
     }, 1000);
