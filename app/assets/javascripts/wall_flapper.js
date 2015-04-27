@@ -76,8 +76,9 @@ var FlapDemo = function(display_selector, input_selector, click_selector) {
     this.$displays = $(display_selector);
     this.num_lines = this.$displays.length;
 
-    this.line_delay = 300;
-    this.screen_delay = 7000;
+    this.line_delay = 500;
+    // alters the amount of time btwn screen refreshes
+    this.screen_delay = 11500;
 
     this.$displays.flapper(this.opts);
 
