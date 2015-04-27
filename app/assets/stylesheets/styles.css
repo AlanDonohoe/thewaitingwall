@@ -490,4 +490,5 @@ nav .brand-logo.center {
 .w-border-s {
   border: white;
   border-style: solid;
+  border-width: 1px;
 }
