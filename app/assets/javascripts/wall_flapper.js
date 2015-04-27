@@ -35,6 +35,10 @@ FlapBuffer.prototype = {
             this.pushLine(this.line_buffer);
             this.line_buffer = '';
         }
+        while (this.buffers[this.buffers.length -1].length < this.num_lines) {
+            this.pushLine("");
+        }
+
     },
 
 };
