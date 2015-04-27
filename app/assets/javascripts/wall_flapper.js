@@ -20,7 +20,7 @@ FlapBuffer.prototype = {
     },
 
     pushWord: function(word) {
-        if (this.line_buffer.length == 0) {
+        if (this.line_buffer.length === 0) {
             this.line_buffer = word;
         } else if ((word.length + this.line_buffer.length + 1) <= this.wrap) {
             this.line_buffer += ' ' + word;
@@ -45,8 +45,13 @@ FlapBuffer.prototype = {
 
 var FlapDemo = function(display_selector, input_selector, click_selector) {
     var _this = this;
-    // var digits_per_line = $(window).width() < 960 ? 6 : 20;
-    digits_per_line = 20;
+    var window_width = $(window).width();
+    var digits_per_line = 19;
+    if (window_width < 1045) { digits_per_line = 19; } else
+    if (window_width > 1045 && window_width < 1290) { digits_per_line = 20; } else
+    if (window_width > 1290 && window_width < 1550) { digits_per_line = 25; } else
+    if (window_width > 1550) { digits_per_line = 30; }
+
 
     var onAnimStart = function(e) {
         var $display = $(e.target);
@@ -96,9 +101,9 @@ FlapDemo.prototype = {
         var buffer = new FlapBuffer(this.opts.width, this.num_lines);
         var lines = text.split(/\n/);
 
-        for (i in lines) {
+        for (var i in lines) {
             var words = lines[i].split(/\s/);
-            for (j in words) {
+            for (var j in words) {
                 buffer.pushWord(words[j]);
             }
             buffer.flush();
@@ -109,7 +114,7 @@ FlapDemo.prototype = {
     },
 
     stopDisplay: function() {
-        for (i in this.timers) {
+        for (var i in this.timers) {
             clearTimeout(this.timers[i]);
         }
 
@@ -120,7 +125,7 @@ FlapDemo.prototype = {
         var _this = this;
         var timeout = 100;
 
-        for (i in buffers) {
+        for (var i in buffers) {
 
             _this.$displays.each(function(j) {
 
