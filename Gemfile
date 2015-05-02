@@ -11,6 +11,7 @@ gem 'cancancan', '~> 1.10'
 gem "figaro"
 gem 'delayed_job_active_record'
 gem 'pusher'
+gem 'carrierwave'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
