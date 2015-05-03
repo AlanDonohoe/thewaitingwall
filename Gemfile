@@ -12,6 +12,7 @@ gem "figaro"
 gem 'delayed_job_active_record'
 gem 'pusher'
 gem 'carrierwave'
+gem 'fog'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

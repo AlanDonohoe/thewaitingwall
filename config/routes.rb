@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :users
   resources :walls, only: [:show]
   resources :messages
+  resources :background_images
   get   "/thewall" => "walls#show"
 end
