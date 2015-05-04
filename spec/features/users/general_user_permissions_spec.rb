@@ -20,7 +20,7 @@ feature 'General user tries to access various parts of the app' do
   scenario 'user visits show message page' do
     visit message_path(@approved_message)
     # expect(page).to have_content('My Message')
-    expect(page).to have_content('Show me the wall')
+    expect(page).to have_content('Then it will be displayed on The Wall')
     expect(page).to_not have_content('You need to sign in or sign up before continuing')
   end
 
