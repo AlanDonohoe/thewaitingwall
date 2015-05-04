@@ -1,0 +1,10 @@
+<%= form_for(@background_image) do |f| %>
+  <div class="row">
+    <div class="col s12">
+      <%= f.file_field :image, multiple: true %>
+      <%= button_tag(type: 'submit', class: "green darken-2 waves-effect waves-light btn-large col s12 m5 offset-m4 l4 offset-l6") do %>
+        <i class="mdi-content-mail left"></i>Upload image
+      <% end %>
+    </div>
+  </div>
+<% end %>

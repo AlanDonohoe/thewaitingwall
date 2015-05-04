@@ -7,7 +7,8 @@ class Ability
     if user.boss?
       can :manage, :all
     elsif user.admin?
-      can [:update, :create, :read, :destroy], [Message]
+      can [:update, :create, :read, :destroy, :new, :show], [Message]
+      can [:create, :read, :new], [BackgroundImage]
     else
       can [:create, :new, :show], [Message]
     end
