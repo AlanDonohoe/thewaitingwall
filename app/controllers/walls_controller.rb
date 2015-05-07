@@ -30,5 +30,6 @@ class WallsController < ApplicationController
     def set_background
       # @show_image = (wall_params[:background].present? && 'show_image' == wall_params[:background]) ? true : false
       @colour = wall_params[:background].present? ? wall_params[:background] : 'black'
+      @background_image = BackgroundImage.first
     end
 end
