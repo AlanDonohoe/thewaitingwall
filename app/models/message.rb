@@ -2,6 +2,7 @@ class Message < ActiveRecord::Base
   default_scope { order('times_shown ASC') }
   scope :approved_messages, -> {where('approved = true')}
   scope :unapproved_messages, -> {where('approved = false')}
+  belongs_to :batch
 
   def self.add_initial_messages
     # from: http://www.confessions.net/

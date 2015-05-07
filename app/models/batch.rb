@@ -1,5 +1,6 @@
 class Batch < ActiveRecord::Base
   has_many :messages
+  has_many :background_images
   after_create :collect_new_messages
 
   def collect_new_messages
