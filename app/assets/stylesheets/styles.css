@@ -38,6 +38,8 @@
 **/
 
 body {
+
+  /*background-color: black;*/
   /*TODO - serve up smaller version for mobile...*/
   /* Location of the image */
 /*  background-image: url(images/background-photo.jpg);*/
@@ -58,7 +60,7 @@ body {
   
   /* Set a background color that will be displayed
      while the background image is loading */
-  background-color: #464646;
+  /*background-color: #464646;*/
 }
 
 
