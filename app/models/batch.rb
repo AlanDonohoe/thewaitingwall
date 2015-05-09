@@ -14,7 +14,7 @@ class Batch < ActiveRecord::Base
 
   def set_background_image
     background_image = BackgroundImage.all.sample(1).first
-    background_image.update_columns(batch_id: self.id)
+    background_image.update_columns(batch_id: self.id) unless background_image.nil?
   end
 
   def collect_new_messages

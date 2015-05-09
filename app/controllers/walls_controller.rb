@@ -1,7 +1,6 @@
 class WallsController < ApplicationController
   before_action :set_wall, only: [:show]
   before_action :get_current_batch, only: [:show]
-  before_action :set_background
 
   # GET /walls/1
   # GET /walls/1.json
@@ -20,14 +19,9 @@ class WallsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wall_params
-      { background: params[:background] }
     end
 
     def get_current_batch
       @current_batch = Batch.last || Batch.create
-    end
-
-    def set_background
-      @colour = wall_params[:background].present? ? wall_params[:background] : 'black'
     end
 end
