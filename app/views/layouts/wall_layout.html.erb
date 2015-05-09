@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/pusher' %>
 </head>
-<body style="background-color:<%= @colour %>; background-image: url(<%= @background_image.image.url %>);">
+<body style="background-color:<%= @colour %>; background-image: url(<%= @current_batch.image_url %>);">
   <div class="container mtxl">
     <%= yield %>
   </div>
