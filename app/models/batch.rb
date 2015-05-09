@@ -1,7 +1,21 @@
 class Batch < ActiveRecord::Base
   has_many :messages
   has_many :background_images
+  after_create :set_background_image
   after_create :collect_new_messages
+
+  def background_image
+    background_images.first || UnsetBackgroundImage.new
+  end
+
+  def image_url
+    background_image.image_url
+  end
+
+  def set_background_image
+    background_image = BackgroundImage.all.sample(1).first
+    background_image.update_columns(batch_id: self.id)
+  end
 
   def collect_new_messages
     puts 'Batch::collect_new_messages'
