@@ -1,14 +1,4 @@
 
-  <div id="main-content">
-    <div class ="row">
-      <h3>The What?</h3>
-      <p>
-        Jerusalem's Wailing Wall, where since the 4th Century people have anonymously posted their prayers of hope, shared their concerns or sought forgiveness by confessing... etc etc...
-      </p>
-    </div>
-  </div>
-
-
 <% if can? :update, @message %>
   <p>
     <strong>Message text:</strong>
@@ -30,5 +20,7 @@
 <% else %>
   <div class = "row ptl">
     <p>Give us a couple of minutes, while someone approves your message. Then it will be displayed on <%= link_to 'The Wall.', wall_path(1) %></p>
+    <br/>
+    <p>Want to <%= link_to 'Post another message?', new_message_path %></p>
   </div>
 <% end %>
