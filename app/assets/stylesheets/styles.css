@@ -83,6 +83,17 @@ nav .brand-logo.center {
   max-width: 960px;
 }
 
+/*
+*/
+
+p {
+  line-height: 25px;
+}
+a {
+/*  line-height: 15px;
+  display: inline;*/
+}
+
 /*==========================================================================================================
 
            #layout adjuster styles - margins, padding, borders etc 

@@ -1,14 +1,10 @@
 $(function() {
   $(".button-collapse").sideNav();
   $(".the-what-link").click(function() {
-    $("#main-content").replaceWith("<div id=\"main-content\"><h3>The What?</h3><p>Based on Jerusalem's Waling Wall, where since the 4th Century people have anonymously posted their prayers of hope, concerns or sought forgiveness by confessing their wrong-doings... etc etc...</p></div>");
-  });
-
-  $(".the-why-link").click(function() {
-    $("#main-content").replaceWith("<div id=\"main-content\"><h3>The Why?</h3><p>In a secular world....... etc etc....</p></div>");
+    $("#main-content").replaceWith("<div id=\"main-content\"><h3>The What?</h3><p>It’s often when waiting, for something or someone, that there is the time to reflect.  That can be uncomfortable or it can be a blessing: a break from rushing around where we are never quite alone with our thoughts.  </p> <br/> <p> Inspired by Alain de Botton's secular version of Jerusalem's Wailing Wall, The Waiting Wall allows you to anonymously share your hopes, problems and confessions.  </p><br/><p>Let worries, regrets and hopes bubble to the surface. Share them with the wall so we can all realise that none of us are alone in our own world of problems.</p></div>");
   });
 
   $(".the-who-link").click(function() {
-    $("#main-content").replaceWith("<div id=\"main-content\"><h3>The Who?</h3><p>Free The Trees and Alain de Botton... etc etc....</p></div>");
+    $("#main-content").replaceWith("<div id=\"main-content\"><h3>The Who?</h3><p>Inspired by Alain de Botton's excellent book: Religion for Atheists and digital artist Witchoria's beautiful pieces on the different stages of grief, Brighton-based Free The Trees have paired up with leading charities to create a secular version of The Wailing Wall envisioned by Alain de Botton.</p><br/><p>Learn more: <a href=\"http://freethetrees.co.uk/\">Free The Trees</a> / <a href=\"http://alaindebotton.com/religion\">Religion for Atheists</a> / <a href=\"https://ello.co/witchoria/post/DBs5UxirltuGyR1RrKL_Zw\">Witchoria: Different Stages of Grief </a></p></div>");
   });
 });
