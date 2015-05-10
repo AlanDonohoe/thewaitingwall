@@ -1,16 +1,18 @@
 <nav>
   <div class="nav-wrapper light-blue darken-4">
     <%= link_to "The Waiting Wall", '/thewall', {class: "brand-logo center"} %>
+    <% if @message.nil? || @message.new_record? %>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li class=""><a href="#" class="waves-effect the-what-link">The What?</a></li>
-      <li class=""><a href="#" class="waves-effect the-who-link">The Who?</a></li>
-      <li class=""><%= link_to "The Wall", '/thewall', {class: "waves-effect"} %></li>
-    </ul>
-    <ul class="side-nav" id="mobile-demo">
-      <li class=""><a href="#" class="waves-effect the-what-link">The What?</a></li>
-      <li class=""><a href="#" class="waves-effect the-who-link">The Who?</a></li>
-      <li class=""><%= link_to "The Wall", '/thewall', {class: "waves-effect"} %></li>
-    </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class=""><a href="#" class="waves-effect the-what-link">The What?</a></li>
+        <li class=""><a href="#" class="waves-effect the-who-link">The Who?</a></li>
+        <li class=""><%= link_to "The Wall", '/thewall', {class: "waves-effect"} %></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li class=""><a href="#" class="waves-effect the-what-link">The What?</a></li>
+        <li class=""><a href="#" class="waves-effect the-who-link">The Who?</a></li>
+        <li class=""><%= link_to "The Wall", '/thewall', {class: "waves-effect"} %></li>
+      </ul>
+    <% end %>
   </div>
 </nav>

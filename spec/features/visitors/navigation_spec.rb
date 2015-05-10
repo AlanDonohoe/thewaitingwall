@@ -5,7 +5,6 @@ feature 'Navigation links', :devise do
     expect(page).to have_content 'Sign in'
     expect(page).to_not have_content 'Sign up'
     expect(page).to_not have_content 'The What?'
-    expect(page).to_not have_content 'The Why?'
   end
 
   scenario 'regular user does not see devise navigation links' do
@@ -13,7 +12,6 @@ feature 'Navigation links', :devise do
     expect(page).to_not have_content 'Sign in'
     expect(page).to_not have_content 'Sign up'
     expect(page).to have_content 'The What?'
-    expect(page).to have_content 'The Why?'
   end
 
   scenario 'visiting the wall user does not see navigation links' do

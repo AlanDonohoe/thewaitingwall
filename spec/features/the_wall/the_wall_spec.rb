@@ -9,6 +9,7 @@ feature 'User views the wall' do
     @admin_user = create(:user, email: 'admin@example.com', role: 'admin')
     signin(@admin_user.email, @admin_user.password)
     visit new_background_image_path
+    # save_and_open_page
     attach_file('background_image_image', File.expand_path('spec/assets/background_1.jpg'))
     click_on('Upload image')
     expect(page).to have_content('Image was successfully created.')
