@@ -26,9 +26,9 @@ class WallsController < ApplicationController
         @link[:link_anchor] = 'http://www.thewaitingwall.com'
         @link[:wrapper_class] = "col s2 offset-s10"
       else
-        @link[:link_text] = 'post message to the wall'
+        @link[:link_text] = 'write message'
         @link[:link_anchor] = 'messages/new'
-        @link[:wrapper_class] = "col s3 offset-s9"
+        @link[:wrapper_class] = "col s2 offset-s10"
       end
     end
 

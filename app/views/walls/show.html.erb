@@ -1,1 +1,6 @@
 <%= render partial: 'wall_wrapper', locals: { current_batch: @current_batch } %>
+<div class="row">
+  <div class="<%= @link[:wrapper_class] %>">
+    <%= link_to(@link[:link_text], @link[:link_anchor], class: 'pull-right') %>
+  </div>
+</div>
