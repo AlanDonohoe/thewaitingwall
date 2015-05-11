@@ -1,6 +1,7 @@
 class WallsController < ApplicationController
   before_action :set_wall, only: [:show]
   before_action :get_current_batch, only: [:show]
+  before_action :set_show_link, only: [:show]
 
   # GET /walls/1
   # GET /walls/1.json
@@ -17,8 +18,23 @@ class WallsController < ApplicationController
       @wall = Wall.first
     end
 
+    def set_show_link
+      show_link = params.permit(:show_link).present? ? true : false
+      @link = {}
+      if show_link
+        @link[:link_text] = 'post message to the wall'
+        @link[:link_anchor] = 'new_message_path'
+        @link[:wrapper_class] = "col s3 offset-s9"
+      else
+        @link[:link_text] = 'thewaitingwall.com'
+        @link[:link_anchor] = 'http://www.thewaitingwall.com'
+        @link[:wrapper_class] = "col s2 offset-s10"
+      end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def wall_params
+      params.permit(:show_link)
     end
 
     def get_current_batch
