@@ -27,7 +27,7 @@ class WallsController < ApplicationController
         @link[:wrapper_class] = "col s2 offset-s10"
       else
         @link[:link_text] = 'post message to the wall'
-        @link[:link_anchor] = 'new_message_path'
+        @link[:link_anchor] = 'messages/new'
         @link[:wrapper_class] = "col s3 offset-s9"
       end
     end
