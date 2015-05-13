@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :messages
   resources :background_images
   get   "/thewall" => "walls#show"
+  get 'google76e2c5afc713d8b3.html' => 'static#google76e2c5afc713d8b3'
 end
