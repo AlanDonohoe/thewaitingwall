@@ -46,7 +46,6 @@ feature 'General user tries to access various parts of the app' do
     last_email = ActionMailer::Base.deliveries.last
     ctoken = last_email.body.match(/confirmation_token=\w*/)
     visit "/users/confirmation?#{ctoken}"
-    save_and_open_page
     fill_in 'user_email', with: 'theguys@freethetrees.co.uk'
     fill_in 'user_password', with: 'password123'
     click_on 'Log in'
