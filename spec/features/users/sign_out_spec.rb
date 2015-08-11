@@ -4,6 +4,7 @@ feature 'Sign out', :devise do
     signin(user.email, user.password)
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
     click_link('Sign out', match: :first)
-    expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+    # expect(page).to have_content I18n.t 'devise.sessions.signed_out'
+    expect(page).to have_content('write message')
   end
 end
