@@ -11,7 +11,7 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
   end
 
   scenario 'visit new message page' do
-    visit root_path
+    visit new_message_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
     click_on 'Post to the wall'
     expect(page).to have_content('Message was successfully created.')
