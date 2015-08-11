@@ -8,7 +8,7 @@ feature 'Navigation links', :devise do
   end
 
   scenario 'regular user does not see devise navigation links' do
-    visit root_path
+    visit new_message_path
     expect(page).to_not have_content 'Sign in'
     expect(page).to_not have_content 'Sign up'
     expect(page).to have_content 'The What?'
