@@ -156,4 +156,3 @@ $(document).ready(function(){
     new FlapDemo('input.display', '#message_message_text', '#message_review');
 
 });
-
