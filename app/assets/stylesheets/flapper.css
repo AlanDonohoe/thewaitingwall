@@ -4,7 +4,7 @@
 
 .flapper {
     font-family: Roboto Condensed, sans-serif;
-    font-weight: 800;
+    font-weight: 300;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -30,16 +30,12 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
-    /*color: rgb(252, 152, 5);*/
-    color: white;
 }
 
 .flapper .digit .bottom {
     bottom: 0px;
     left: 0px;
     overflow: hidden;
-    /*color: rgb(252, 152, 5);*/
-    color: white;
 }
 
 /* SIZE STYLES */
@@ -190,7 +186,7 @@
 /* S 30x40 */
 
 .flapper.S {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 39px;
     height: 44px;
 }

@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'User posts a message to the wall' do
   scenario 'they enter some message and submit the new message and visit the wall before it is approved' do
     @wall = create(:wall)
-    visit new_message_path
+    visit root_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
     click_on 'Post to the wall'
     expect(page).to have_content('Message was successfully created.')
