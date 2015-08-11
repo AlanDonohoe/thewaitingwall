@@ -6,7 +6,7 @@ feature 'General user tries to access various parts of the app' do
     @approved_message = create(:message, approved: true, message_text: 'this is an approved message')
   end
   scenario 'user visits new message page' do
-    visit new_message_path
+    visit root_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
     click_on 'Post to the wall'
     expect(page).to have_content('Message was successfully created.')
@@ -53,11 +53,11 @@ feature 'General user tries to access various parts of the app' do
     expect(User.last.role).to eq 'general'
     expect(page).to_not have_content('Approve messages')
     visit messages_path
-    expect(page).to have_content('write message')
+    expect(page).to have_content('You are not authorized to access this page')
     expect(page).to_not have_content('My Message')
 
     visit edit_message_path(@approved_message)
-    expect(page).to have_content('write message')
+    expect(page).to have_content('You are not authorized to access this page')
     expect(page).to_not have_content('My Message')
   end
 end
