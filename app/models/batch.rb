@@ -3,6 +3,7 @@ class Batch < ActiveRecord::Base
   has_many :background_images
   after_create :set_background_image
   after_create :collect_new_messages
+  after_create :destroy_previous_batch
 
   def background_image
     background_images.first || UnsetBackgroundImage.new
@@ -27,6 +28,10 @@ class Batch < ActiveRecord::Base
       message.update_attributes(batch_id: self.id, times_shown: incremented_times_shown)
     end
     update_the_wall
+  end
+
+  def destroy_previous_batch
+    Batch.first.destroy
   end
 
   def letter_count
