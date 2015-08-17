@@ -26,10 +26,10 @@ class BackgroundImagesController < ApplicationController
     respond_to do |format|
       if @background_image.save
         format.html { redirect_to @background_image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @background_image }
+        # format.json { render :show, status: :created, location: @background_image }
       else
         format.html { render :new }
-        format.json { render json: @background_image.errors, status: :unprocessable_entity }
+        # format.json { render json: @background_image.errors, status: :unprocessable_entity }
       end
     end
   end
