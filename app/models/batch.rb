@@ -31,6 +31,7 @@ class Batch < ActiveRecord::Base
   end
 
   def destroy_previous_batch
+    return unless Batch.count > 2
     Batch.first.destroy
   end
 
