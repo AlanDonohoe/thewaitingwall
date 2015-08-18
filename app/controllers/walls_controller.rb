@@ -8,7 +8,7 @@ class WallsController < ApplicationController
   def show
     respond_to do |format|
       format.js
-      format.html { render layout: 'wall_layout' }
+      format.html # { render layout: 'wall_layout' }
     end
   end
 
