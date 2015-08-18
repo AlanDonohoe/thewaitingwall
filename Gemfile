@@ -13,14 +13,17 @@ gem 'delayed_job_active_record'
 gem 'pusher'
 gem 'carrierwave'
 gem 'fog'
+gem 'devise'
+gem 'pg'
+gem 'puma'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'rspec-rails'
 end
-gem 'devise'
-gem 'pg'
-gem 'puma'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
@@ -34,11 +37,6 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
-end
-group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'rspec-rails'
 end
 group :production do
   gem 'rails_12factor'
