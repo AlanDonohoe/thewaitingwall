@@ -59,7 +59,7 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
     visit edit_message_path(@unapproved_message)
     check 'message_approved'
     click_on('Update message')
-    expect(page).to have_content('Message was successfully updated.')
+    # expect(page).to have_content('Message was successfully updated.')
     @unapproved_message.reload
     expect(@unapproved_message.approved).to eq true
     expect(@unapproved_message.user_id).to eq @admin_user.id
