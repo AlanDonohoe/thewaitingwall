@@ -225,6 +225,7 @@ GEM
       css_parser (>= 1.2.6)
       nokogiri
       rails
+    high_voltage (2.4.0)
     hike (1.2.3)
     hitimes (1.2.2)
     httpclient (2.6.0.1)
@@ -414,6 +415,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   headhunter
+  high_voltage (~> 2.4.0)
   hub
   jbuilder (~> 2.0)
   jquery-rails
