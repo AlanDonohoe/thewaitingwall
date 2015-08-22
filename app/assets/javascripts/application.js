@@ -14,8 +14,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require navigation
 //= require google_analytics
 //= require materialize
-//= require scrolling_and_animations
 //= require jquery.flapper
+//= require init
+
+// $("li.last a").unbind('click'); // so last tab is an actual link
