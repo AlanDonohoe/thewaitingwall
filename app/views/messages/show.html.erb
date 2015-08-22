@@ -18,9 +18,42 @@
   <%= link_to 'Edit', edit_message_path(@message) %> |
   <%= link_to 'Back', messages_path %>
 <% else %>
-  <div class = "row ptl">
-    <p>Give us a couple of minutes, while someone approves your message. Then it will be displayed on <%= link_to 'The Wall.', wall_path(1) %></p>
-    <br/>
-    <p>Want to <%= link_to 'post another message?', new_message_path, data: {no_turbolink: false} %></p>
-  </div>
+  <main>
+    <div id="index-banner" class="parallax-container fullscreen">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <div class="row">
+            <h4 class="header col s12 light">Thank you</h4>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><%= image_tag('https://s3-eu-west-1.amazonaws.com/wallbackgroundimages/uploads/background_image/image/4/a_IMG_3373.jpg') %></div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <div class="row"> 
+          <div class="col s12"><p class="light">...for helping us build The Waiting Wall.</p>
+          <br/>
+          <p class="light">Give us a moment while someone approves your message. It will appear shortly on the wall. </p>
+          <br/>
+          <p class="light">Join us at our 'Public View', from 6pm on Thursday, 10th August at Brighton Station's <a href="http://www.thecyclistbrighton.co.uk/">The Cyclist</a> where we will thank everyone who contributed with free drinks for all. Just say: 'I put a brick in the wall', to get your free drinks.</p>
+          <hr>
+          </div>
+            <div class="row center">
+              <%= link_to '/thewall', class: 'btn-large waves-effect waves-light amber darken-1', method: "get" do %>
+              View the Wall
+              <% end %>
+            </div>
+          
+            <div class="row center">
+              <div class="col s4 offset-s4 grid-example center"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.thewaitingwall.co.uk&text=The%20Waiting%20Wall:%20http%3A%2F%2Fwww.thewaitingwall.co.uk&via=thewaitingwall" target="_blank" title="Tweet"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.thewaitingwall.co.uk&t=The%20Waiting%20Wall" title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%= render 'layouts/footer'%>
 <% end %>

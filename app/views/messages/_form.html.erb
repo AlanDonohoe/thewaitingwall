@@ -1,42 +1,19 @@
 <%= form_for(@message) do |f| %>
   <%= render partial: 'errors' %>
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <%= f.text_area :message_text, class: "materialize-textarea", placeholder: 'Enter your message for the wall...', required: true  %>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="actions row">
-    <%= button_tag(type: 'button', class: "green waves-effect waves-light btn-large col s12 m5 offset-m7 l2 offset-l10", id: 'message_review') do %>
-      <i class="mdi-content-mail left"></i>Preview
-    <% end %>
-  </div>
-  <div id="flapper-display-area">
+<div class="section">
     <div class="row">
-      <div class="displays z-depth-2">
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
-        <input class="display S"/>
+      <div class="col s12 center">
+        <!-- <h5>What are you thinking?</h5> -->
+        <div class="input-field col s12">
+          <%= f.text_field(:message_text, class: 'validate white-text', required: true) %>
+          <%= f.label(:message_text, 'Enter your message for the wall') %>
+        </div>
+        <%= button_tag(type: 'submit', class: 'btn-large waves-effect waves-light amber darken-1') do %>
+          Post to the wall
+        <% end %>
+        
+      <br><br>
       </div>
-    </div>
-    <div class="actions row">
-      <%= button_tag(type: 'button', class: "blue-grey waves-effect waves-light btn-large col s12 m3 l2", id: 'edit_message') do %>
-        <i class="material-icons left">loop</i>Edit
-      <% end %>
-      <%= button_tag(type: 'submit', class: "green darken-2 waves-effect waves-light btn-large col s12 m5 offset-m4 l4 offset-l6") do %>
-        <i class="mdi-content-mail left"></i>Post to the wall
-      <% end %>
     </div>
   </div>
 <% end %>

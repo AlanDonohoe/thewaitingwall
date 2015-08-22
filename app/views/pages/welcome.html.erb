@@ -1,0 +1,21 @@
+<main>
+<div id="index-banner" class="fullscreen">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <div class="row center">
+        <%= image_tag("waiting-wall-logo.jpg", class: "splashlogo") %>
+      </div>
+      <br>
+      <div class="row center">
+        <%= link_to 'Enter', new_message_path, data: { no_turbolink: true }, class: "btn-large waves-effect waves-light amber darken-1" %>
+      </div>
+      <br>
+      <div class="row center">
+        <a href="#" class="btn waves-effect waves-light amber darken-1">Come along to the Public View</a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<%= render 'layouts/footer'%>

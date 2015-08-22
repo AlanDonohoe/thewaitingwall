@@ -18,5 +18,3 @@
 //= require materialize
 //= require jquery.flapper
 //= require init
-
-// $("li.last a").unbind('click'); // so last tab is an actual link

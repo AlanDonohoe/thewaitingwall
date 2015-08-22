@@ -6,7 +6,7 @@ feature 'User posts a message to the wall' do
     visit new_message_path
     fill_in 'message_message_text', with: 'this is my message for the wall'
     click_on 'Post to the wall'
-    expect(page).to have_content('Message was successfully created.')
+    expect(page).to have_content('Thank you')
     # expect(page).to have_content('this is my message for the wall')
     visit wall_path(@wall)
     expect(page).to_not have_content('this is my message for the wall')
