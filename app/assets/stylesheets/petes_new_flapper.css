@@ -1,11 +1,24 @@
-/*@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 /* STRUCTURAL STYLES */
 
+.ticker {
+  overflow: auto;
+  white-space:nowrap;
+  padding: 14px 10px 14px 10px;
+  border-radius: 4px;
+  background-color:rgba(0,0,0,.6);
+  max-width:720px;
+	
+}
+
+.row.ticker.center {
+	margin: 0 auto;
+}
 
 .flapper {
-    font-family: Roboto Condensed, sans-serif;
-    font-weight: 800;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
@@ -31,16 +44,12 @@
     top: 0px;
     left: 0px;
     overflow: hidden;
-    /*color: rgb(252, 152, 5);*/
-    color: white;
 }
 
 .flapper .digit .bottom {
     bottom: 0px;
     left: 0px;
     overflow: hidden;
-    /*color: rgb(252, 152, 5);*/
-    color: white;
 }
 
 /* SIZE STYLES */
@@ -191,7 +200,7 @@
 /* S 30x40 */
 
 .flapper.S {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 39px;
     height: 44px;
 }
@@ -213,8 +222,6 @@
 .flapper.S .digit div {
     height: 40px;
     width: 30px;
-/*    height: 100%;
-    width: 4%;*/
     font-size: inherit;
     line-height: inherit;
 }
@@ -269,15 +276,21 @@
 /* DARK (default) */
 
 .flapper .digit {
-    background-color: #222;
-    border: 1px solid #333;
+    background-color: #333;
+    border: 1px solid #000;
 }
 
 .flapper .digit div {
-   /* color: #f0f0f0;*/
-    color: white;
+    color: #ffb300;
     padding: 0px;
-    background-color: black;
+    background: rgba(38,38,38,1);
+background: -moz-linear-gradient(top, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(38,38,38,1)), color-stop(100%, rgba(0,0,0,1)));
+background: -webkit-linear-gradient(top, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
+background: -o-linear-gradient(top, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
+background: -ms-linear-gradient(top, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
+background: linear-gradient(to bottom, rgba(38,38,38,1) 0%, rgba(0,0,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#262626', endColorstr='#000000', GradientType=0 );
 }
 
 /* LIGHT */
@@ -291,77 +304,4 @@
     color: #222;
     padding: 0px;
     background-color: #f6f6f6;
-}
-
-.page {
-    width: 1000px;
-    margin: 30px auto 0;
-}
-
-h1 {
-    text-align: center;
-    font-size: 24px;
-}
-
-.displays {
-    padding: 10px;
-    /*border: 10px solid #ccc;*/
-    /*background-color: #222;*/
-    background-color: black;
-    border-radius: 2px;
-    /*box-shadow: 0 0 12px 4px #000 inset;*/
-    opacity: 0.5;
-    /*width: 60%;*/
-    /*margin-top: 5%;*/
-}
-
-.flapper {
-    margin-bottom: 2px;
-    text-align: center;
-}
-
-.inputarea {
-    margin: 24px 0;
-}
-
-#typesomething,
-#showme {
-    font-family: Roboto Condensed;
-    font-size: 18px;
-    padding: 14px;
-    background-color: #EEE;
-    color: #333;
-    border: 0;
-    height: 170px;
-}
-
-#typesomething {
-    width: 300px;
-}
-
-#showme:hover {
-    background-color: #DDD;
-}
-
-#showme:active {
-    background-color: #CCC;
-}
-
-div.inline {
-    display: inline-block;
-    vertical-align: bottom;
-}
-
-div.activity {
-    width: 12px;
-    height: 12px;
-    border-radius: 6px;
-    background-color: #250000;
-    position: relative;
-    top: 33px;
-    left: -15px;
-}
-
-div.activity.active {
-    background-color: #f00;
 }
