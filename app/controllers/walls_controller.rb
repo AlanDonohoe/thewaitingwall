@@ -8,8 +8,8 @@ class WallsController < ApplicationController
   # GET /walls/1.json
   def show
     respond_to do |format|
-      format.js
       format.html { render layout: 'wall_layout' }
+      format.js
     end
   end
 
