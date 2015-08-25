@@ -9,11 +9,19 @@
         $('.change img').each(function () {
             this.src= "/assets/background2.jpg";
         });
+        // swap out small displays for xs displays on smaller screens
+        $('.display').removeClass('XS');
+        $('.display').addClass('S');
+        $('.flapper').css('font-weight', 800);
       }
       else if(window.matchMedia(imgsmall).matches) {
         $('.change img').each(function () {
             this.src= "/assets/background1.jpg";
         });
+        // swap out small displays for xs displays on smaller screens
+        $('.display').removeClass('S');
+        $('.display').addClass('XS');
+        $('.flapper').css('font-weight', 300);
       }
     }
 
@@ -22,6 +30,7 @@
     $(window).bind("resize", function() {
         imageresize();
     });
+
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
   }); // end of document ready
