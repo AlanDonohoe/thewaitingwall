@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>The Waiting Wall</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'wall_flapper', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/pusher' %>
 </head>
-<body style="background-color:black; background-image: url(<%= @current_batch.image_url %>);">
-  <div class="container mtxl">
-    <%= yield %>
-  </div>
+<body>
+  <%= yield %>
 </body>
 </html>

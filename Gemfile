@@ -16,6 +16,7 @@ gem 'fog'
 gem 'devise'
 gem 'pg'
 gem 'puma'
+gem 'high_voltage', '~> 2.4.0'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

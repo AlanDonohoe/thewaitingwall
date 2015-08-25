@@ -1,22 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+/*@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300);*/
 
 /* STRUCTURAL STYLES */
 
-.ticker {
-  overflow: auto;
-  white-space:nowrap;
-  padding: 7px 5px 7px 5px;
-  border-radius: 4px;
-  background-color:rgba(0,0,0,0.2);
-  max-width:830px;
-}
-
-.row.ticker.center {
-    margin: 0 auto;
-}
-
 .flapper {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: Roboto Condensed, sans-serif;
     font-weight: 800;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -29,7 +16,6 @@
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
-    /*opacity: 0.3;*/
 }
 
 .flapper .digit div {
@@ -243,7 +229,7 @@
 /* XS 24x30 */
 
 .flapper.XS {
-    font-size: 24px;
+    font-size: 28px;
     line-height: 30px;
     height: 34px;
 }
@@ -264,10 +250,9 @@
 .flapper.XS .digit,
 .flapper.XS .digit div {
     height: 30px;
-    width: 20px;
+    width: 24px;
     font-size: inherit;
     line-height: inherit;
-    font-weight: 300;
 }
 
 .flapper.XS .digit .top {
@@ -321,7 +306,7 @@ h1 {
     padding: 10px;
     /*border: 10px solid #ccc;*/
     /*background-color: #222;*/
-    /*background-color: black;*/
+    background-color: black;
     border-radius: 2px;
     /*box-shadow: 0 0 12px 4px #000 inset;*/
     opacity: 0.5;

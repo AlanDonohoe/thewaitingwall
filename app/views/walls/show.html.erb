@@ -1,6 +1,14 @@
 <%= render partial: 'wall_wrapper', locals: { current_batch: @current_batch } %>
-<div class="row">
-  <div class="<%= @link[:wrapper_class] %>">
-    <%= link_to(@link[:link_text], @link[:link_anchor], class: 'pull-right') %>
+<div class="parallax change"><img src="#" alt="waiting wall image"></div>
+<div class="container">
+  <div class="row">
+   <div class="col s6 offset-s6 mtl">
+      <%= link_to(@link[:link_text], @link[:link_anchor], class: 'pull-right', 'data-no-turbolink' => true) %>
+    </div>
+  </div>
+
+  <div class="row center">
+    <div class="col s4 offset-s4 grid-example center"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.thewaitingwall.com&text=The%20Waiting%20Wall:%20http%3A%2F%2Fwww.thewaitingwall.com&via=thewaitingwall&hashtags=bdf15" target="_blank" title="Tweet"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.thewaitingwall.com&t=The%20Waiting%20Wall" title="Share on Facebook" target="_blank"><i class="fa fa-facebook fa-lg"></i></a>
+    </div>
   </div>
 </div>

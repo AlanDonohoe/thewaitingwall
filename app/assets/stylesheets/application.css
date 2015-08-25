@@ -13,6 +13,6 @@
  *= require_self
  *= require reset
  *= require materialize
- *= require styles
+ *= require style
  *= require flapper
  */
