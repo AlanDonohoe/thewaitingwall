@@ -2,6 +2,7 @@ class WallsController < ApplicationController
   before_action :set_wall, only: [:show]
   before_action :get_current_batch, only: [:show]
   before_action :set_show_link, only: [:show]
+  skip_before_action :verify_authenticity_token, only: [:show]
 
   # GET /walls/1
   # GET /walls/1.json
