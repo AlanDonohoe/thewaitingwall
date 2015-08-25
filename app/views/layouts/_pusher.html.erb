@@ -14,7 +14,8 @@
   });
   var channel = pusher.subscribe('the_waiting_wall');
   channel.bind('wall_update', function(data) {
-    $.get('/thewall');
+    // $.get('/thewall');
+    $.ajax({url: '/thewall', dataType: 'script'});
   });
   <% unless Rails.env.production? %>
   // Some useful debug msgs
