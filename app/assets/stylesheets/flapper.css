@@ -1,14 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);
+/*@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed);*/
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 
 /* STRUCTURAL STYLES */
 
 .ticker {
-  overflow: auto;
-  white-space:nowrap;
-  padding: 7px 5px 7px 5px;
-  border-radius: 4px;
-  background-color:rgba(0,0,0,0.2);
-  max-width:830px;
+    overflow: auto;
+    white-space:nowrap;
+    padding: 7px 5px 7px 5px;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.2);
+    max-width:830px;
+    display: inline-block;
+    overflow: hidden;
 }
 
 .row.ticker.center {
@@ -16,8 +19,10 @@
 }
 
 .flapper {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 800;
+    /*font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 800;*/
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;

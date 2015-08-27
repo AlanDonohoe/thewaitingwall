@@ -21,7 +21,7 @@
         // swap out small displays for xs displays on smaller screens
         $('.display').removeClass('S');
         $('.display').addClass('XS');
-        $('.flapper').css('font-weight', 300);
+        $('.flapper').css('font-weight', 400);
       }
     }
 

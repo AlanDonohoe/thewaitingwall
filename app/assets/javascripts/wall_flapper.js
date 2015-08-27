@@ -46,12 +46,15 @@ FlapBuffer.prototype = {
 var FlapDemo = function(display_selector, input_selector, click_selector) {
     var _this = this;
     var window_width = $(window).width();
-    var digits_per_line = 19;
-    if (window_width < 720) { digits_per_line = 10; } else
-    if (window_width > 1045 && window_width < 1290) { digits_per_line = 20; } else
-    if (window_width > 1290 && window_width < 1550) { digits_per_line = 25; } else
-    if (window_width > 1550) { digits_per_line = 30; }
-
+    var digits_per_line = 10;
+    // if (window_width < 720) { digits_per_line = 10; } else
+    // if (window_width > 1045 && window_width < 1290) { digits_per_line = 20; } else
+    // if (window_width > 1290 && window_width < 1550) { digits_per_line = 25; } else
+    // if (window_width > 1550) { digits_per_line = 30; }
+    if (window_width < 741) { digits_per_line = 10; } else
+    if (window_width > 740 && window_width < 1026) { digits_per_line = 24; } else
+    if (window_width > 1025) { digits_per_line = 32; }
+    // ?? over 1290px   -    you could probably go around 50 blocks depending on block size
 
     var onAnimStart = function(e) {
         var $display = $(e.target);

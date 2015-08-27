@@ -6,6 +6,19 @@
  * Made By MaterializeCSS.com
  */
 
+a {
+  color: #ffb300;
+}
+
+.faux-link-text {
+  color: #ffb300 !important;
+}
+
+.wall_link {
+  color: #039be5 !important;
+  outline-color: white !important;
+}
+
 .parallax {
   overflow: hidden;
 }
@@ -174,6 +187,7 @@ footer.page-footer {
 .footer-text {
   font-size: 12px !important; 
   text-align: center;
+  line-height: 20px;
 }
 
 
