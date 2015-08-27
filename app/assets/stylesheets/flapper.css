@@ -9,7 +9,7 @@
     padding: 7px 5px 7px 5px;
     border-radius: 4px;
     background-color: rgba(0,0,0,0.2);
-    max-width:830px;
+    /*max-width:830px;*/
     display: inline-block;
     overflow: hidden;
 }
