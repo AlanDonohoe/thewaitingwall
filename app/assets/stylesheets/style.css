@@ -16,7 +16,11 @@ a {
 
 .wall_link {
   color: #039be5 !important;
-  outline-color: white !important;
+  /*outline-color: white !important;*/
+}
+
+.wall_link:hover {
+  color: #c1ccd2 !important;
 }
 
 .parallax {

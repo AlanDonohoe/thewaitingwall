@@ -20,11 +20,14 @@ class WallsController < ApplicationController
   end
 
   def set_show_link
-    show_link = params.permit(:show_link).present? ? true : false
+    @show_link = params.permit(:show_link).present? ? true : false
     @link = {}
-    if show_link
+    # @show_social_share_links = false
+    puts 'show_social_share_links ' + @show_social_share_links.inspect
+    if @show_link
       @link[:link_text] = 'thewaitingwall.com'
       @link[:link_anchor] = 'http://www.thewaitingwall.com'
+      # @show_social_share_links = false
       # @link[:wrapper_class] = "col s2 offset-s10"
     else
       @link[:link_text] = 'write message'
