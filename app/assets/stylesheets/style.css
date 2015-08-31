@@ -6,6 +6,11 @@
  * Made By MaterializeCSS.com
  */
 
+
+.fade-in {
+  opacity: 0.0;
+}
+
 a {
   color: #ffb300;
 }

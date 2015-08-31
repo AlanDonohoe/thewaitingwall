@@ -1,5 +1,18 @@
 (function($){ 
   $(function(){
+    var calledOnce = false;
+    (function hide_post_msg_btn() {
+      $('#message_message_text').keyup(function(){
+        value = $('#message_message_text').val().length;
+        if ($('#message_message_text').val().length > 0 && !calledOnce){
+          $('.fade-in').animate({ opacity: 1.0}, 1000 );
+          calledOnce = true;
+        }else if ($('#message_message_text').val().length < 1){
+          $('.fade-in').animate({ opacity: 0.0}, 10);
+          calledOnce = false;
+        }
+      });
+    }());
     
   // media queries image swap
     var imgsmall = "(min-device-width:320px)";
@@ -17,6 +30,7 @@
       else if(window.matchMedia(imgsmall).matches) {
         $('.change img').each(function () {
             this.src= "/assets/background1-a9d15ff618c71c16cc1cc81dc8d8f2f1.jpg";
+
         });
         // swap out small displays for xs displays on smaller screens
         $('.display').removeClass('S');
@@ -28,7 +42,7 @@
     imageresize();
 
     $(window).bind("resize", function() {
-        imageresize();
+      imageresize();
     });
 
     $('.button-collapse').sideNav();
