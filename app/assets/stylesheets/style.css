@@ -7,6 +7,15 @@
  */
 
 
+.full-screen-img {
+  background: url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+}
+
+
 .fade-in {
   opacity: 0.0;
 }
@@ -33,20 +42,21 @@ a {
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #222;
-    /*NEW styles*/
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #222;
+  /*background-color: #8e95a3;*/
+  /*NEW styles*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 main {
-    flex: 1 0 auto;
-  }
+  flex: 1 0 auto;
+}
 
 nav {
   background: transparent;
