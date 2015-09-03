@@ -17,6 +17,10 @@
   <%= render 'layouts/pusher' %>
 </head>
 <body class="full-screen-img">
+  <div style="display: none" id="hideAll">&nbsp;</div>
+  <script type="text/javascript">
+    document.getElementById("hideAll").style.display = "block";
+  </script> 
   <%= yield %>
 </body>
 </html>

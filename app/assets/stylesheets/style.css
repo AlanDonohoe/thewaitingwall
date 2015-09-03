@@ -6,6 +6,16 @@
  * Made By MaterializeCSS.com
  */
 
+#hideAll
+{
+  position: fixed;
+  left: 0px; 
+  right: 0px; 
+  top: 0px; 
+  bottom: 0px; 
+  background-color: white;
+  z-index: 99; /* Higher than anything else in the document */
+}
 
 .full-screen-img {
   background: url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed;
@@ -14,7 +24,6 @@
   -o-background-size: cover;      /* Opera*/
   background-size: cover;         /* Generic*/
 }
-
 
 .fade-in {
   opacity: 0.0;

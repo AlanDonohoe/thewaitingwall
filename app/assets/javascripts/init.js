@@ -1,4 +1,5 @@
-(function($){ 
+(function($){
+  $(window).load(function() {  document.getElementById("hideAll").style.display = "none"; });
   $(function(){
     var calledOnce = false;
     (function hide_post_msg_btn() {
