@@ -25,8 +25,6 @@
     var imgbig   = "(min-device-width:960px)";
     function imageresize() {
       if(window.matchMedia(imgbig).matches) {
-        // the wall
-        $('.full-screen-img').css("background-image", "url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed");
         $('.change img').each(function () {
           this.src= "/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg";
         });
@@ -36,8 +34,6 @@
         $('.flapper').css('font-weight', 800);
       }
       else if(window.matchMedia(imgsmall).matches) {
-        // the wall
-        $('.full-screen-img').css("background-image", "url(/assets/background1-a9d15ff618c71c16cc1cc81dc8d8f2f1.jpg) no-repeat center center fixed");
         $('.change img').each(function () {
           this.src= "/assets/background1-a9d15ff618c71c16cc1cc81dc8d8f2f1.jpg";
         });

@@ -18,7 +18,7 @@
 }
 
 .full-screen-img {
-  background: url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed;
+  /*background: url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed;*/
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/

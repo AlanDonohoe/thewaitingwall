@@ -15,6 +15,11 @@
   <%= javascript_include_tag 'application', 'wall_flapper', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/pusher' %>
+  <style type="text/css">
+  .full-screen-img {
+    background: url("<%= @current_batch.image_url %>") no-repeat center center fixed;
+  }
+  </style>
 </head>
 <body class="full-screen-img">
   <div style="display: none" id="hideAll">&nbsp;</div>
