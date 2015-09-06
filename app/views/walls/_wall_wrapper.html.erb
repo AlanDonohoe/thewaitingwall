@@ -1,26 +1,50 @@
-<div id="wall_wrapper">
-  <div style="display:none" id="current_batch_of_messages"><%= @current_batch.appended_messages %></div>
-  <main>
-    <div id="index-banner" class="fullscreen">
-      <div class="section no-pad-bot">
-        <div class="container center">
-          <br><br>
-          <div class="row ticker center">
-            <div class="displays">
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
-              <input class="display S"/>
+<body class="full-screen-img">
+  <div id="wall_wrapper">
+    <style type="text/css">
+      .full-screen-img {
+        background: url("<%= @current_batch.image_url %>") no-repeat center center fixed;
+      }
+    </style>
+    <div style="display: none" id="hideAll">&nbsp;</div>
+    <script type="text/javascript">
+      document.getElementById("hideAll").style.display = "block";
+    </script> 
+    <div style="display:none" id="current_batch_of_messages"><%= @current_batch.appended_messages %></div>
+    <main>
+      <div id="index-banner" class="fullscreen">
+        <div class="section no-pad-bot">
+          <div class="container center">
+            <br><br>
+            <div class="row ticker center">
+              <div class="displays">
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+                <input class="display S"/>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </main>
+    <div class="container">
+  <div class="row">
+   <div class="col s12 mtl center">
+      <%= link_to(@link[:link_text], @link[:link_anchor], class: 'wall_link', 'data-no-turbolink' => true) %>
     </div>
-  </main>
+  </div>
+  <% unless @show_link %>
+  <div class="row center">
+    <div class="col s4 offset-s4 grid-example center"><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.thewaitingwall.com&text=The%20Waiting%20Wall:%20http%3A%2F%2Fwww.thewaitingwall.com&via=thewaitingwall&hashtags=bdf15" target="_blank" title="Tweet"><i class="wall_link fa fa-twitter fa-lg"></i></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.thewaitingwall.com&t=The%20Waiting%20Wall" title="Share on Facebook" target="_blank"><i class="wall_link fa fa-facebook fa-lg"></i></a>
+    </div>
+  </div>
+  <% end %>
 </div>
+  </div>
+</body>
