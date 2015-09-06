@@ -21,7 +21,7 @@ class Batch < ActiveRecord::Base
   def collect_new_messages
     puts 'Batch::collect_new_messages'
     total_no_of_letters = 0
-    Message.approved_messages.limit(10).each do |message|
+    Message.approved_messages.limit(40).each do |message|
       total_no_of_letters += message.message_text.length
       break if total_no_of_letters > ENV['MAX_NO_OF_LETTERS_IN_BATCH'].to_i
       incremented_times_shown = message.times_shown + 1
