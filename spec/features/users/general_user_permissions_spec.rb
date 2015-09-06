@@ -53,13 +53,13 @@ feature 'General user tries to access various parts of the app' do
     expect(User.last.role).to eq 'general'
     expect(page).to_not have_content('Approve messages')
     visit messages_path
-    expect(page).to have_content('write message')
+    expect(page).to have_content('The Waiting Wall has been made possible by Brighton Digital Festival')
     # expect(page).to have_content('You are not authorized to access this page')
     expect(page).to_not have_content('My Message')
 
     visit edit_message_path(@approved_message)
     # expect(page).to have_content('You are not authorized to access this page')
-    expect(page).to have_content('write message')
+    expect(page).to have_content('The Waiting Wall has been made possible by Brighton Digital Festival')
     expect(page).to_not have_content('My Message')
   end
 end
