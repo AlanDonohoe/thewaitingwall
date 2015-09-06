@@ -41,10 +41,12 @@ class Batch < ActiveRecord::Base
     total_no_of_letters
   end
 
-  def appended_messages
+  def appended_messages(add_promo_text = false)
     appended_messages_text = ""
-    messages.each do |message|
+    messages.each_with_index do |message, count|
+      count_plus_one = count + 1
       appended_messages_text += message.message_text + "\n                    \n"
+      appended_messages_text += 'the waiting wall.com' + "\n                    \n" if ( add_promo_text && 0 == count_plus_one % 3)
     end
     appended_messages_text
   end

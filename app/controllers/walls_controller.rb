@@ -20,9 +20,9 @@ class WallsController < ApplicationController
   end
 
   def set_show_link
-    @show_link = params.permit(:show_link).present? ? true : false
+    @public_view = params.permit(:public_view).present? ? true : false
     @link = {}
-    if @show_link
+    if @public_view
       @link[:link_text] = 'thewaitingwall.com'
       @link[:link_anchor] = 'http://www.thewaitingwall.com'
     else
@@ -33,7 +33,7 @@ class WallsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def wall_params
-    params.permit(:show_link)
+    params.permit(:public_view)
   end
 
   def get_current_batch
