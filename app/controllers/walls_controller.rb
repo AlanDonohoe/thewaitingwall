@@ -37,6 +37,6 @@ class WallsController < ApplicationController
   end
 
   def get_current_batch
-    @current_batch = Batch.last || Batch.create
+    @current_batch = Batch.includes(:background_images, :messages).last || Batch.create
   end
 end
