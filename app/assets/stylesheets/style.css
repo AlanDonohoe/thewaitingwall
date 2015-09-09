@@ -30,13 +30,13 @@
 }
 
 a {
-  color: #c0dfd9;
-  border-bottom: 1px dashed;
-  /*color: #039be5;*/
+  /*color: #c0dfd9;*/
+  color: #a7e0fc;
 }
 
 .faux-link-text {
-  color: #c0dfd9 !important;
+  /*color: #c0dfd9 !important;*/
+  color: #a7e0fc !important;
 }
 
 .wall_link {
@@ -53,9 +53,8 @@ a {
 }
 
 html {
-  
   color:#F8F8F8;
-  }
+}
 
 body {
   display: flex;
@@ -154,9 +153,8 @@ hr {
   background-color: #1c1c1a;
 }
 .tabs .tab a {
-  color: #c0dfd9;
-  border-bottom: none !important;
-
+  /*color: #c0dfd9;*/
+  color: #a7e0fc;
 }
 .tabs .tab a:hover {
   color: #fff;
