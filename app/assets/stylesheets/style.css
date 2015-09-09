@@ -18,7 +18,7 @@
 }
 
 .full-screen-img {
-  /*background: url(/assets/background2-6492c83fc5943157d9debcd80089e7f7.jpg) no-repeat center center fixed;*/
+  background: url(/assets/background2.jpg) no-repeat center center fixed;
   -webkit-background-size: cover; /* For WebKit*/
   -moz-background-size: cover;    /* Mozilla*/
   -o-background-size: cover;      /* Opera*/
@@ -30,11 +30,13 @@
 }
 
 a {
-  color: #ffb300;
+  color: #c0dfd9;
+  border-bottom: 1px dashed;
+  /*color: #039be5;*/
 }
 
 .faux-link-text {
-  color: #ffb300 !important;
+  color: #c0dfd9 !important;
 }
 
 .wall_link {
@@ -50,11 +52,16 @@ a {
   overflow: hidden;
 }
 
+html {
+  
+  color:#F8F8F8;
+  }
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #222;
+  background-color: #252524;
   /*background-color: #8e95a3;*/
   /*NEW styles*/
   background-position: center;
@@ -89,7 +96,7 @@ nav {
 }
 
 .side-nav a {
-  color: #FDB22B;
+  color: #c0dfd9;
 }
 
 .side-nav a:hover {
@@ -98,12 +105,12 @@ nav {
 
 nav ul a,
 nav .brand-logo {
-  color: #FDB22B;
+  color: #c0dfd9;
   font-weight: 300;
 }
 
 h1, h2, h3, h4, h5 {
-  color:#f3f3f3;
+  color:#fff;
 }
 
 h4.header {
@@ -138,27 +145,29 @@ hr {
   min-height: 350px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,1);
 }
 .parallax-container .section {
   width: 100%;
 }
 .tabs {
-  background-color: #333;
+  background-color: #1c1c1a;
 }
 .tabs .tab a {
-  color: #FDB22B;
+  color: #c0dfd9;
+  border-bottom: none !important;
+
 }
 .tabs .tab a:hover {
   color: #fff;
 }
 
 .tabs .indicator {
-  background-color: #FDB22B;
+  background-color: #c0dfd9;
 }
 
 .fa {
-  /*color: #FDB22B;*/
+  /*color: #c0dfd9;*/
   color: #039be5;
   margin: 0 8px 0 8px;
 }
@@ -172,17 +181,29 @@ footer.page-footer {
 
 
 input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-    border-bottom: 1px solid #FDB22B;
-    box-shadow: 0 1px 0 0 #FDB22B; }
+    border-bottom: 1px solid #c0dfd9;
+    box-shadow: 0 1px 0 0 #c0dfd9; }
 
 input[type=text].valid, input[type=text]:focus.valid, input[type=password].valid, input[type=password]:focus.valid, input[type=email].valid, input[type=email]:focus.valid, input[type=url].valid, input[type=url]:focus.valid, input[type=time].valid, input[type=time]:focus.valid, input[type=date].valid, input[type=date]:focus.valid, input[type=datetime-local].valid, input[type=datetime-local]:focus.valid, input[type=tel].valid, input[type=tel]:focus.valid, input[type=number].valid, input[type=number]:focus.valid, input[type=search].valid, input[type=search]:focus.valid, textarea.materialize-textarea.valid, textarea.materialize-textarea:focus.valid {
-    border-bottom: 1px solid #f3f3f3;
-    box-shadow: 0 1px 0 0 #f3f3f3; }
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 1px 0 0 #fff; }
 input[type=text].valid + label:after, input[type=text]:focus.valid + label:after, input[type=password].valid + label:after, input[type=password]:focus.valid + label:after, input[type=email].valid + label:after, input[type=email]:focus.valid + label:after, input[type=url].valid + label:after, input[type=url]:focus.valid + label:after, input[type=time].valid + label:after, input[type=time]:focus.valid + label:after, input[type=date].valid + label:after, input[type=date]:focus.valid + label:after, input[type=datetime-local].valid + label:after, input[type=datetime-local]:focus.valid + label:after, input[type=tel].valid + label:after, input[type=tel]:focus.valid + label:after, input[type=number].valid + label:after, input[type=number]:focus.valid + label:after, input[type=search].valid + label:after, input[type=search]:focus.valid + label:after, textarea.materialize-textarea.valid + label:after, textarea.materialize-textarea:focus.valid + label:after {
     content: attr(data-success);
-    color: #f3f3f3;
+    color: #fff;
     opacity: 1; }
+input[type=text]:disabled + label, input[type=text][readonly="readonly"] + label, input[type=password]:disabled + label, input[type=password][readonly="readonly"] + label, input[type=email]:disabled + label, input[type=email][readonly="readonly"] + label, input[type=url]:disabled + label, input[type=url][readonly="readonly"] + label, input[type=time]:disabled + label, input[type=time][readonly="readonly"] + label, input[type=date]:disabled + label, input[type=date][readonly="readonly"] + label, input[type=datetime-local]:disabled + label, input[type=datetime-local][readonly="readonly"] + label, input[type=tel]:disabled + label, input[type=tel][readonly="readonly"] + label, input[type=number]:disabled + label, input[type=number][readonly="readonly"] + label, input[type=search]:disabled + label, input[type=search][readonly="readonly"] + label, textarea.materialize-textarea:disabled + label, textarea.materialize-textarea[readonly="readonly"] + label {
+    color: rgba(255, 255, 255, 1); }
+  
+  
+  
+  .amber.darken-1 {
+    background-color: #97BDB8 !important;
+}
 
+.amber-text.text-darken-1 {
+    color: #97BDB8 !important;
+}
+  
 
 
 @media only screen and (max-width : 992px) {
