@@ -43,10 +43,12 @@ class Batch < ActiveRecord::Base
 
   def appended_messages(add_promo_text = false)
     appended_messages_text = ""
-    messages.each_with_index do |message, count|
-      count_plus_one = count + 1
+    count = 0
+    shuffled_messages = messages.shuffle 
+    shuffled_messages.each do |message|
+      count += 1
       appended_messages_text += message.message_text + "\n                    \n"
-      appended_messages_text += 'the waiting wall.com' + "\n                    \n" if ( add_promo_text && 0 == count_plus_one % 3)
+      appended_messages_text += 'the waiting wall.com' + "\n                    \n" if ( add_promo_text && 0 == count % 3)
     end
     appended_messages_text
   end
