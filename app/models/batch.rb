@@ -48,7 +48,7 @@ class Batch < ActiveRecord::Base
     shuffled_messages.each do |message|
       count += 1
       appended_messages_text += message.message_text + "\n                    \n"
-      appended_messages_text += 'the waiting wall.com' + "\n                    \n" if ( add_promo_text && 0 == count % 3)
+      appended_messages_text += "the waiting wall.com - Inspired by Alain de Botton's Secular Version of Jerusalem's Wailing Wall - Visit the waiting wall.com to leave a message - #BDF15" + "\n                    \n" if ( add_promo_text && 0 == count % 3)
     end
     appended_messages_text
   end
