@@ -5,24 +5,30 @@
   <table>
     <thead>
       <tr>
-        <th>Message text</th>
         <th>Approved</th>
-        <th>Times shown</th>
-        <th colspan="3"></th>
+        <th>Delete</th>
       </tr>
     </thead>
 
-    <tbody>
-      <% @messages.each do |message| %>
-        <tr>
-          <td><%= message.message_text %></td>
-          <td><%= message.approved %></td>
-          <td><%= message.times_shown %></td>
-          <td><%= link_to 'Approve', edit_message_path(message) %></td>
-          <td><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
+    <%= form_tag approve_or_delete_messages_path, :method => :put do %>
+      <%= submit_tag "Approve/Delete" %>
+      <tbody>
+        <% @messages.each do |message| %>
+          <tr>
+            <td>
+              <input type="checkbox" name="approved_message_ids[]" id="approve_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
+              <label for="approve_message_<%= message.id.to_s %>"></label>
+            </td>
+            <td>
+              <input type="checkbox" name="deleted_message_ids[]" id="delete_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
+              <label for="delete_message_<%= message.id.to_s %>"><%= message.message_text %></label>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+      
+    <% end %>
   </table>
 
   <br>
+

@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update, :destroy, :index]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy, :index, :approve]
   before_action :get_current_batch, only: [:new]
   load_and_authorize_resource
 
@@ -69,6 +69,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  # approve multiple messages simultaneously
+  def approve_or_delete
+    @messages.where(id: params[:deleted_message_ids]).destroy_all
+    @messages.where(id: params[:approved_message_ids]).update_all(approved: true)
+    respond_to do |format|
+      format.html { redirect_to request.referer, notice: 'Messages were successfully approved.' }
+    end
+  end
  
   private
   # Use callbacks to share common setup or constraints between actions.
