@@ -96,6 +96,12 @@ feature 'Admin user tries to access various parts of the app and edit messages' 
   end
 
   scenario 'they delete a message and then reinstate' do
-    # pending("bring in soft delete... paranoid gem")
+    message_to_restore = @five_unapproved_messages[0]
+    visit messages_path
+    find(:css, "#delete_message_#{@five_unapproved_messages[0].id}").set(true)
+    click_on('Approve/Delete')
+    expect(Message.count).to eq 4
+    message_to_restore.restore
+    expect(Message.count).to eq 5
   end
  end
