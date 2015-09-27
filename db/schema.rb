@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817205521) do
+ActiveRecord::Schema.define(version: 20150926220229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 20150817205521) do
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
     t.integer  "batch_id"
+    t.datetime "deleted_at"
   end
 
   add_index "messages", ["batch_id"], name: "index_messages_on_batch_id", using: :btree
+  add_index "messages", ["deleted_at"], name: "index_messages_on_deleted_at", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|

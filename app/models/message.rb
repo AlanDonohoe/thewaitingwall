@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  acts_as_paranoid
   default_scope { order('times_shown ASC') }
   scope :approved_messages, -> {where('approved = true')}
   scope :unapproved_messages, -> {where('approved = false')}
