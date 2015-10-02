@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = @messages.unapproved_messages
+    @messages = @messages.unapproved_messages.page params[:page]
     render layout: 'devise_layout' 
   end
 

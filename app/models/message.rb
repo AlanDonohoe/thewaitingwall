@@ -4,6 +4,7 @@ class Message < ActiveRecord::Base
   scope :approved_messages, -> {where('approved = true')}
   scope :unapproved_messages, -> {where('approved = false')}
   belongs_to :batch
+  paginates_per 50
 
   def self.add_initial_messages
     # from: http://www.confessions.net/

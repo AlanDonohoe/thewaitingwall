@@ -19,6 +19,7 @@ gem 'puma'
 gem 'high_voltage', '~> 2.4.0'
 gem 'newrelic_rpm'
 gem "paranoia", "~> 2.0"
+gem 'kaminari'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

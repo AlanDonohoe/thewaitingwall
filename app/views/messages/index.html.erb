@@ -1,38 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-  <h1>Listing Messages</h1>
+<h1>Listing Messages</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Edit</th>
-        <th>Approved</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th>Edit</th>
+      <th>Approved</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
 
-    <%= form_tag approve_or_delete_messages_path, :method => :put do %>
-      <%= submit_tag "Approve/Delete" %>
-      <tbody>
-        <% @messages.each do |message| %>
-          <tr>
-            <td>
-              <%= link_to 'edit ', edit_message_path(message) %>
-            </td>
-            <td>
-              <input type="checkbox" name="approved_message_ids[]" id="approve_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
-              <label for="approve_message_<%= message.id.to_s %>"></label>
-            </td>
-            <td>
-              <input type="checkbox" name="deleted_message_ids[]" id="delete_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
-              <label for="delete_message_<%= message.id.to_s %>"><%= message.message_text %></label>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-      
-    <% end %>
-  </table>
+  <%= form_tag approve_or_delete_messages_path, :method => :put do %>
+    <%= submit_tag "Approve/Delete" %>
+    <tbody>
+      <% @messages.each do |message| %>
+        <tr>
+          <td>
+            <%= link_to 'edit ', edit_message_path(message) %>
+          </td>
+          <td>
+            <input type="checkbox" name="approved_message_ids[]" id="approve_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
+            <label for="approve_message_<%= message.id.to_s %>"></label>
+          </td>
+          <td>
+            <input type="checkbox" name="deleted_message_ids[]" id="delete_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
+            <label for="delete_message_<%= message.id.to_s %>"><%= message.message_text %></label>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    
+  <% end %>
+</table>
 
-  <br>
-
+<br>
+<%= paginate @messages %>
