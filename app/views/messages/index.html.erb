@@ -5,6 +5,7 @@
   <table>
     <thead>
       <tr>
+        <th>Edit</th>
         <th>Approved</th>
         <th>Delete</th>
       </tr>
@@ -15,6 +16,9 @@
       <tbody>
         <% @messages.each do |message| %>
           <tr>
+            <td>
+              <%= link_to 'edit ', edit_message_path(message) %>
+            </td>
             <td>
               <input type="checkbox" name="approved_message_ids[]" id="approve_message_<%= message.id.to_s %>" value="<%= message.id.to_s %>"/>
               <label for="approve_message_<%= message.id.to_s %>"></label>
