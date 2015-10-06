@@ -1,9 +1,21 @@
 class Batch < ActiveRecord::Base
   has_many :messages
   has_many :background_images
+  before_create :reset_messages_times_shown_if_stale
   after_create :set_background_image
   after_create :collect_new_messages
   after_create :destroy_previous_batch
+
+  # If there's no recently approved messages (none with times shown = 0), then refresh a bunch of
+  # old messages - so we dont just get the same last approved messages being shown
+  def reset_messages_times_shown_if_stale
+    puts 'reset_messages_times_shown_if_stale'
+    return if Message.approved_messages.first.times_shown == 0
+    Message.approved_messages.limit(50).order("RANDOM()").each do |message|
+      message.update_attributes(times_shown: 1)
+      puts 'Reseting message times shown: ' + message.message_text.inspect + ' - Times show: ' + message.times_shown.inspect
+    end
+  end
 
   def background_image
     background_images.first || UnsetBackgroundImage.new
