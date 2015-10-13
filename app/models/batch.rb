@@ -10,7 +10,7 @@ class Batch < ActiveRecord::Base
   # old messages - so we dont just get the same last approved messages being shown
   def reset_messages_times_shown_if_stale
     puts 'reset_messages_times_shown_if_stale'
-    return if Message.approved_messages.first.times_shown == 0
+    return if Message.approved_messages.first.nil? || Message.approved_messages.first.times_shown == 0
     Message.approved_messages.limit(50).order("RANDOM()").each do |message|
       message.update_attributes(times_shown: 1)
       puts 'Reseting message times shown: ' + message.message_text.inspect + ' - Times show: ' + message.times_shown.inspect
