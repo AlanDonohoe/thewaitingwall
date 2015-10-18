@@ -4,6 +4,10 @@
 #   So I can visit protected areas of the site
 feature 'Sign Up', :devise do
 
+  before do
+    Tenant.create(name: '', subdomain: '') # default tenant...
+  end
+
   # Scenario: Visitor can sign up with valid email address and password
   #   Given I am not signed in
   #   When I sign up with a valid email address and password

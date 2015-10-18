@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :message do
-    association :tenant
+    # association :tenant
     approved false
     times_shown 0
     sequence(:message_text) { |n| "Message #{n}" }

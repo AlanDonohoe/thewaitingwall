@@ -1,5 +1,9 @@
 feature 'Navigation links', :devise do
 
+  before do
+    Tenant.create(name: '', subdomain: '') # default tenant...
+  end
+
   scenario 'admin user views devise navigation links, but not the ability to sign up' do
     visit new_user_session_path
     expect(page).to have_content 'Sign in'

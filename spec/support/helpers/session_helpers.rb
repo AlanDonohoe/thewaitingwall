@@ -10,6 +10,7 @@ module Features
 
     def signin(email, password)
       visit new_user_session_path
+      # puts page.body.inspect
       fill_in 'Email', with: email
       fill_in 'Password', with: password
       click_button 'Log in'

@@ -7,6 +7,10 @@ Warden.test_mode!
 #   So I can change my email address
 feature 'User edit', :devise do
 
+  before do
+    Tenant.create(name: '', subdomain: '') # default tenant...
+  end
+
   after(:each) do
     Warden.test_reset!
   end

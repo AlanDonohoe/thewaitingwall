@@ -1,7 +1,11 @@
 FactoryGirl.define do
   factory :tenant do
-    name "Tenant No. One"
-    subdomain "tenantnoone"
+    name "Tenant One"
+    subdomain "tenantone"
+    trait :default_tenant do
+      name ""
+      subdomain ""
+    end
     trait :meaning_conf do
       name 'Meaning Conference'
       subdomain "meaningconf"

@@ -1,4 +1,7 @@
 feature 'Sign out', :devise do
+  before do
+    Tenant.create(name: '', subdomain: '') # default tenant...
+  end
   scenario 'user signs out successfully' do
     user = FactoryGirl.create(:user)
     signin(user.email, user.password)

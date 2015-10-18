@@ -27,7 +27,6 @@ class Tenant < ActiveRecord::Base
   def oldest_batch
     batches.fist
   end
-
   # Batch related methods - end
   # - - - - - - - - - - -
 end
