@@ -16,7 +16,8 @@ class WallsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_wall
-    @wall = Wall.first
+    # @wall = Wall.first
+    @wall = Wall.new
   end
 
   def set_show_link
@@ -37,6 +38,6 @@ class WallsController < ApplicationController
   end
 
   def get_current_batch
-    @current_batch = current_tenant.batches.includes(:background_images, :messages).last || Batch.create
+    @current_batch = current_tenant.batches.includes(:background_images, :messages).last || current_tenant.batches.create
   end
 end
