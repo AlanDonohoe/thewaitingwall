@@ -1,0 +1,18 @@
+<% return unless can? :update, @message %>
+<p>
+  <strong>Message text:</strong>
+  <%= @message.message_text %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @message.approved %>
+</p>
+
+<p>
+  <strong>Times shown:</strong>
+  <%= @message.times_shown %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

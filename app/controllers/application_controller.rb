@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :prevent_xhr_caching
+  before_action :current_tenant
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
@@ -18,4 +19,11 @@ class ApplicationController < ActionController::Base
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   end
+
+  def current_tenant
+    'www' == request.subdomain ? subdomain = '' : subdomain = request.subdomain
+    Tenant.find_by_subdomain! subdomain # default tenant has empty subdomain string - so this will be served if user visits site with no subdomain...
+  end
+
+  # helper_method :current_tenant # if we need to use the tenant in the views
 end

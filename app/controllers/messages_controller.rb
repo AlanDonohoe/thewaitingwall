@@ -1,12 +1,12 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy, :index, :approve]
-  before_action :get_current_batch, only: [:new]
+  # before_action :get_current_batch, only: [:new]
   load_and_authorize_resource
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = @messages.unapproved_messages.page params[:page]
+    @messages = current_tenant.messages.unapproved_messages.page params[:page]
     render layout: 'devise_layout' 
   end
 
@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @message = Message.new
+    @message = current_tenant.messages.new
   end
 
   # GET /messages/1/edit
@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     # TODO delete approved params - so no one can hack in an approved message
-    @message = Message.new(message_params)
+    @message = current_tenant.messages.new(message_params)
 
     respond_to do |format|
       if @message.save
@@ -92,7 +92,8 @@ class MessagesController < ApplicationController
     end
   end
 
-  def get_current_batch
-    @current_batch = Batch.last || Batch.create
-  end
+  # def get_current_batch
+  #   puts 'get_current_batch - - -  !!!'
+  #   @current_batch = Batch.last || Batch.create
+  # end
 end
