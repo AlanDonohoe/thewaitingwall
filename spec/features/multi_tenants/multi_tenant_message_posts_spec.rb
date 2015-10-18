@@ -7,6 +7,7 @@ feature 'User posts and views messages via a multi tenant section of the site' d
     @other_tenant = create(:tenant, subdomain: 'othertenant')
     @wall = create(:wall)
   end
+
   scenario 'they post a message to a subdomain section of the site' do
     switch_to_subdomain(@meaning_conf_tenant.subdomain)
     visit new_message_path
@@ -14,7 +15,6 @@ feature 'User posts and views messages via a multi tenant section of the site' d
     click_on 'Post to the wall'
     expect(page).to have_content('Thank you')
     expect(@meaning_conf_tenant.messages.count).to eq 1
-
   end
 
   scenario 'they see correctly scoped messages based on what version of the site they are visiting' do
@@ -53,4 +53,5 @@ feature 'User posts and views messages via a multi tenant section of the site' d
       expect(page).to_not have_content @other_tenant_msg.message_text
     end
   end
+  # TODO: need to test guest param + tenancy stuff: http://localhost:5000/?guest=meaningconf
 end  

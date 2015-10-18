@@ -17,6 +17,8 @@
 
     <% if @public_view %>
      $.ajax({url: '/thewall?public_view=true', dataType: 'script'});
+    <% elsif Tenant.append_guest_url?(current_tenant.subdomain) %>
+      $.ajax({url: "<%= append_current_tenant_subdomain_url('/thewall') %>", dataType: 'script'});
     <% else %>
       $.ajax({url: '/thewall', dataType: 'script'});
     <% end %>

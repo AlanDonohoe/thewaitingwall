@@ -7,6 +7,9 @@
         <div class="input-field col s12" id="new_msg_input">
           <%= f.text_field(:message_text, class: 'validate white-text', required: true) %>
           <%= f.label(:message_text, 'Enter your message for the wall', class: 'faux-link-text') %>
+          <% unless Tenant.using_subdomain_for_tenants? %>
+            <%= hidden_field_tag 'guest', current_tenant.subdomain %>
+          <% end %>
         </div>
         <%= button_tag(type: 'submit', class: 'btn-large waves-effect waves-light amber darken-1 fade-in') do %>
           Post to the wall

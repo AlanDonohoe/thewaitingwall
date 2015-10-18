@@ -23,7 +23,7 @@
         <hr>
         </div>
           <div class="row center">
-            <%= link_to '/thewall', class: 'btn-large waves-effect waves-light amber darken-1', method: "get" do %>
+            <%= link_to append_current_tenant_subdomain_url('/thewall'), class: 'btn-large waves-effect waves-light amber darken-1', method: "get" do %>
             View the Wall
             <% end %>
           </div>

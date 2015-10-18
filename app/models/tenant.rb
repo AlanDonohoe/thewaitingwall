@@ -6,6 +6,15 @@ class Tenant < ActiveRecord::Base
     Tenant.first
   end
 
+  def self.append_guest_url?(subdomain)
+    !using_subdomain_for_tenants? && subdomain.present?
+  end
+
+  def self.using_subdomain_for_tenants?
+    return true if Rails.env.test? # will need to look at making this a little more flexible
+    false # amend if we do start using subdomains
+  end
+
   def approved_messages
     messages.approved_messages
   end
@@ -25,7 +34,7 @@ class Tenant < ActiveRecord::Base
   end
 
   def oldest_batch
-    batches.fist
+    batches.first
   end
   # Batch related methods - end
   # - - - - - - - - - - -
