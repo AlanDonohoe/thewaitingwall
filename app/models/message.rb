@@ -1,10 +1,18 @@
 class Message < ActiveRecord::Base
   acts_as_paranoid
   default_scope { order('times_shown ASC') }
-  scope :approved_messages, -> {where('approved = true')}
-  scope :unapproved_messages, -> {where('approved = false')}
+  scope :approved_messages, -> { where(approved: true) }
+  scope :unapproved_messages, -> { where(approved: false) }
   belongs_to :batch
+  belongs_to :tenant
+  after_create :assign_default_tenant_if_unowned
+  validates :message_text, presence: true
   paginates_per 50
+
+  def assign_default_tenant_if_unowned
+    return if tenant.present?
+    update_columns(tenant_id: Tenant.default_tenant.id)
+  end
 
   def self.add_initial_messages
     # from: http://www.confessions.net/

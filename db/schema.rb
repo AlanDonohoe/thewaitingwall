@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926220229) do
+ActiveRecord::Schema.define(version: 20151018094344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20150926220229) do
   create_table "batches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "tenant_id"
   end
+
+  add_index "batches", ["tenant_id"], name: "index_batches_on_tenant_id", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -53,11 +56,21 @@ ActiveRecord::Schema.define(version: 20150926220229) do
     t.integer  "user_id"
     t.integer  "batch_id"
     t.datetime "deleted_at"
+    t.integer  "tenant_id"
   end
 
   add_index "messages", ["batch_id"], name: "index_messages_on_batch_id", using: :btree
   add_index "messages", ["deleted_at"], name: "index_messages_on_deleted_at", using: :btree
+  add_index "messages", ["tenant_id"], name: "index_messages_on_tenant_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
+  create_table "tenants", force: :cascade do |t|
+    t.string   "name"
+    t.string   "subdomain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "info_text"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
@@ -78,10 +91,12 @@ ActiveRecord::Schema.define(version: 20150926220229) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "role",                   default: "general"
+    t.integer  "tenant_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["tenant_id"], name: "index_users_on_tenant_id", using: :btree
 
   create_table "walls", force: :cascade do |t|
     t.datetime "created_at", null: false

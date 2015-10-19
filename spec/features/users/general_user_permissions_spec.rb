@@ -2,8 +2,9 @@ require 'rails_helper'
 
 feature 'General user tries to access various parts of the app' do
   before :each do
+    @default_tenant = Tenant.create(name: '', subdomain: '') # default tenant...
     @wall = create(:wall)
-    @approved_message = create(:message, approved: true, message_text: 'this is an approved message')
+    @approved_message = create(:message, approved: true, message_text: 'this is an approved message', tenant_id: @default_tenant.id)
   end
   scenario 'user visits new message page' do
     visit new_message_path
@@ -30,7 +31,7 @@ feature 'General user tries to access various parts of the app' do
   end
 
   scenario 'user visits the wall page' do
-    pending "message does display but in flapper"
+    Tenant.all.each { |tenant| tenant.create_batch } # run the batch method
     visit wall_path(@wall)
     expect(page).to have_content('this is an approved message')
     expect(page).to_not have_content('You need to sign in or sign up before continuing')

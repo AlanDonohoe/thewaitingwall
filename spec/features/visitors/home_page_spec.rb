@@ -4,6 +4,10 @@
 #   So I can learn more about the website
 feature 'Home page' do
 
+  before do
+    Tenant.create(name: '', subdomain: '') # default tenant...
+  end
+
   # Scenario: Visit the home page
   #   Given I am a visitor
   #   When I visit the home page
