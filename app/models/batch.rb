@@ -35,8 +35,9 @@ class Batch < ActiveRecord::Base
   end
 
   def appended_messages(add_promo_text = false)
+    puts 'appended_messages add_promo_text ' + add_promo_text.inspect
     appended_messages_text = ""
-    messages.shuffle.each_with_index do |message|
+    messages.shuffle.each_with_index do |message, count|
       appended_messages_text += message.message_text + PAGE_BREAK if message.message_text.present?
       appended_messages_text += tenant.info_text + PAGE_BREAK if ( add_promo_text && tenant.info_text.present? && 0 == (count + 1) % 3)
     end
