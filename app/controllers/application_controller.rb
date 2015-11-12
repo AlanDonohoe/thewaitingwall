@@ -22,10 +22,8 @@ class ApplicationController < ActionController::Base
 
   def current_tenant
     Tenant.using_subdomain_for_tenants? ? subdomain = request.subdomain : subdomain = params[:guest]
-    puts 'subdomain ' + subdomain.inspect
     subdomain = '' if subdomain.nil? || 'www' == subdomain
     tenant = Tenant.find_by_subdomain subdomain # default tenant has empty subdomain string - so this will be served if user visits site with no subdomain...
-    puts ' tenant    - - - ' + tenant.inspect
     return tenant.nil? ? Tenant.default_tenant : tenant
   end
 

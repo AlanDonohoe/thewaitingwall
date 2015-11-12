@@ -13,10 +13,10 @@
     cluster: 'eu'
   });
   var channel = pusher.subscribe('the_waiting_wall');
-  channel.bind('wall_update', function(data) {
+    channel.bind('wall_update', function(data) {
 
     <% if @public_view %>
-     $.ajax({url: '/thewall?public_view=true', dataType: 'script'});
+     $.ajax({url: "/thewall?public_view=true&guest=meaningconf", dataType: 'script'});
     <% elsif Tenant.append_guest_url?(current_tenant.subdomain) %>
       $.ajax({url: "<%= append_current_tenant_subdomain_url('/thewall') %>", dataType: 'script'});
     <% else %>
