@@ -24,7 +24,7 @@ class WallsController < ApplicationController
     @public_view = params.permit(:public_view).present? ? true : false
     @link = {}
     if @public_view
-      @link[:link_text] = 'bit.do/meaningwaitingwall'
+      @link[:link_text] = 'bit.ly/waitingwall'
       @link[:link_anchor] = 'http://www.thewaitingwall.com'
     else
       @link[:link_text] = 'write message'
