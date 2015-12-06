@@ -74,11 +74,8 @@ class Batch < ActiveRecord::Base
     end
     # TODO: remove this pusher call and just user a JS 10 min timer: then turn off pusher...
     #  http://stackoverflow.com/questions/4114268/how-to-make-ajax-requests-each-10-seconds-besides-long-polling
-    update_the_wall
-  end
-
-  def update_the_wall
-    Pusher['the_waiting_wall'].trigger('wall_update', {}) unless Rails.env.test?
+    # actually - average session lasts for 2 mins - so just remove pusher...
+    # update_the_wall
   end
 
   def set_background_image
