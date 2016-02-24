@@ -7,7 +7,7 @@ class BackgroundImage < ActiveRecord::Base
 end
 
 class UnsetBackgroundImage
-  def image_url
-    ''
+  def image_url # give them some default that isnt a blank screen
+    "https://wallbackgroundimages.s3.amazonaws.com/uploads/background_image/image/22/a_IMG_3338.jpg"
   end
 end
