@@ -1,4 +1,4 @@
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
   acts_as_paranoid
   default_scope { order('times_shown ASC') }
   scope :approved_messages, -> { where(approved: true) }

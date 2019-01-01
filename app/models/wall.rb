@@ -1,2 +1,2 @@
-class Wall < ActiveRecord::Base
+class Wall < ApplicationRecord
 end

@@ -1,4 +1,4 @@
-class Batch < ActiveRecord::Base
+class Batch < ApplicationRecord
   has_many :messages
   has_many :background_images
   belongs_to :tenant
