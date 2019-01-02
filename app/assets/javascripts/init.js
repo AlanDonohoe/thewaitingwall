@@ -1,5 +1,6 @@
 (function($){
-  $(window).load(function() {
+  $(document).on('turbolinks:load', function() {
+  // $(window).load(function() {
     var loadingScreen = document.getElementById("hideAll");
     if(!!loadingScreen){
       loadingScreen.style.display = "none";

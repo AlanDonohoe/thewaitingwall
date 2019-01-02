@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.6.0'
 gem 'rails', '5.2.2'
 gem 'bootsnap', '>= 1.3.2', require: false
 gem 'sass-rails', '>= 5.0.7'
@@ -16,9 +16,10 @@ gem 'fog'
 gem 'devise', '>= 4.5.0'
 gem 'pg'
 gem 'puma', '>= 3.11.4'
-gem 'high_voltage', github: 'thoughtbot/high_voltage' #'~> 2.4.0'
+gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
 gem 'paranoia', '>= 2.3.1'
 gem 'kaminari', '>= 1.1.1'
+gem 'xmlrpc'
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
