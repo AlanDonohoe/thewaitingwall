@@ -1,10 +1,10 @@
-class Message < ActiveRecord::Base
+class Message < ApplicationRecord
   acts_as_paranoid
   default_scope { order('times_shown ASC') }
   scope :approved_messages, -> { where(approved: true) }
   scope :unapproved_messages, -> { where(approved: false) }
-  belongs_to :batch
-  belongs_to :tenant
+  belongs_to :batch, optional: true
+  belongs_to :tenant, optional: true
   after_create :assign_default_tenant_if_unowned
   validates :message_text, presence: true
   paginates_per 50

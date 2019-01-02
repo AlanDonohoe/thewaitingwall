@@ -1,4 +1,4 @@
-class BackgroundImage < ActiveRecord::Base
+class BackgroundImage < ApplicationRecord
   mount_uploader :image, BackgroundImageUploader
   belongs_to :batch
   # def image_url

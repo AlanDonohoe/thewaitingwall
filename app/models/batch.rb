@@ -1,7 +1,7 @@
-class Batch < ActiveRecord::Base
+class Batch < ApplicationRecord
   has_many :messages
   has_many :background_images
-  belongs_to :tenant
+  belongs_to :tenant, optional: true
   before_create :reset_messages_times_shown_if_stale
   after_create :set_background_image
   after_create :collect_new_messages

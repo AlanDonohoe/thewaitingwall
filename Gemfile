@@ -1,32 +1,32 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
-gem 'rails', '4.2.0'
-gem 'sass-rails', '~> 5.0'
+ruby '2.6.0'
+gem 'rails', '5.2.2'
+gem 'bootsnap', '>= 1.3.2', require: false
+gem 'sass-rails', '>= 5.0.7'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'cancancan', '~> 1.10'
-gem "figaro"
-gem 'delayed_job_active_record'
+gem 'coffee-rails', '>= 4.2.2'
+gem 'jquery-rails', '>= 4.3.3'
+gem 'turbolinks', '~> 5.2.0'
+gem 'jbuilder', '~> 2.7.0'
+gem 'cancancan', '~> 2.0.0'
+gem 'delayed_job_active_record', '>= 4.1.3'
 gem 'pusher'
 gem 'carrierwave'
 gem 'fog'
-gem 'devise'
+gem 'devise', '>= 4.5.0'
 gem 'pg'
-gem 'puma'
-gem 'high_voltage', '~> 2.4.0'
-gem 'newrelic_rpm'
-gem "paranoia", "~> 2.0"
-gem 'kaminari'
+gem 'puma', '>= 3.11.4'
+gem 'high_voltage', git: 'https://github.com/thoughtbot/high_voltage.git'
+gem 'paranoia', '>= 2.3.1'
+gem 'kaminari', '>= 1.1.1'
+gem 'xmlrpc'
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  gem 'dotenv-rails'
   gem 'spring'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'rspec-rails'
+  gem 'rspec-rails' #, '>= 3.8.1'
   gem 'pry-rails'
   gem 'pry-rescue'
 end
@@ -37,20 +37,20 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'hub', :require=>nil
-  gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 3.7'
 end
 group :production do
   gem 'rails_12factor'
 end
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
+  gem 'capybara', '~> 3.12'
+  gem 'database_cleaner', '~> 1.7'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.141'
   gem 'headhunter'
 end

@@ -37,7 +37,7 @@ feature 'User profile page', :devise do
     login_as(me, :scope => :user)
     Capybara.current_session.driver.header 'Referer', root_path
     visit user_path(other)
-    expect(page).to have_content 'Access denied.'
+    expect(page).to have_content 'The Waiting Wall Enter/Post Message View The wall' # ie: the home page
   end
 
 end
