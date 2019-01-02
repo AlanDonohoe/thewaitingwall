@@ -30,12 +30,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     # TODO delete approved params - so no one can hack in an approved message
-    puts 'current_tenant ' + current_tenant.inspect
-    puts 'batches count ' + current_tenant.batches.count.inspect
-
     @message = current_tenant.messages.new(message_params)
-
-    puts '@message ' + @message.inspect
 
     respond_to do |format|
       if @message.save
